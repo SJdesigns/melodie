@@ -1,0 +1,3051 @@
+/* ---- variables ---- */
+/* ------------------- */
+@font-face {
+  font-family: "Roboto-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Roboto-Regular");
+  src: url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Roboto-Light");
+  src: url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "cabin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("cabin");
+  src: url("../fonts/cabin/Cabin-VariableFont_wdth,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "courgette";
+  font-style: normal;
+  font-weight: normal;
+  src: local("courgette");
+  src: url("../fonts/courgette/Courgette-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "raleway";
+  font-style: normal;
+  font-weight: normal;
+  src: local("raleway");
+  src: url("../fonts/raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "inter";
+  font-style: normal;
+  font-weight: normal;
+  src: local("inter");
+  src: url("../fonts/inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto-Regular", sans-serif;
+  font-family: "inter", sans-serif;
+}
+
+#loadScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+#loadScreen #loadScreenAuthor {
+  position: fixed;
+  left: 36px;
+  top: 12px;
+  width: 130px;
+  height: 56px;
+}
+#loadScreen #loadScreenAuthor path {
+  fill: #bbb !important;
+}
+#loadScreen #loadScreenCenter {
+  position: relative;
+  width: 800px;
+  height: 460px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#loadScreen #loadScreenCenter #loadScreenIdent {
+  position: relative;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loadScreen #loadScreenCenter #loadScreenLogo {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin-top: 30px;
+  margin-left: 5px;
+}
+#loadScreen #loadScreenCenter #loadScreenLogo #loadLogoMain {
+  stroke: #f07;
+  stroke-dasharray: 405;
+  stroke-dashoffset: 405;
+  animation: loadScreenPrimary 1.5s linear forwards;
+}
+#loadScreen #loadScreenCenter #loadScreenLogo #loadLogoSecondary {
+  stroke: rgba(255, 0, 119, 0);
+  stroke-width: 30px;
+  animation: loadScreenSecondary 0.4s linear forwards;
+  animation-delay: 1.5s;
+}
+#loadScreen #loadScreenCenter h1 {
+  margin-left: 15px;
+  margin-top: 12px;
+  color: #f07;
+  color: #888;
+  font-size: 70pt;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "cabin", sans-serif;
+  cursor: default;
+  animation: loadScreenTexth1 2s linear forwards;
+  animation-delay: 1.2s;
+}
+#loadScreen #loadScreenCenter h3 {
+  margin-left: 16px;
+  font-size: 36pt;
+  color: #f07;
+  color: #aaa;
+  opacity: 0.7;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "raleway", sans-serif;
+  cursor: default;
+  animation: loadScreenTexth2 2s linear forwards;
+  animation-delay: 1.2s;
+}
+#loadScreen #loadScreenCenter #loadScreenError {
+  position: absolute;
+  font-size: 13pt;
+  bottom: 0px;
+  color: #444;
+  visibility: hidden;
+  animation: loadScreenShowError 4s linear forwards;
+  animation-delay: 6s;
+}
+
+#startup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 18;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#startup #startupCenter {
+  position: fixed;
+  width: 850px;
+  height: 620px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#startup #startupCenter #startupIdentity {
+  text-align: center;
+  color: #f07;
+  display: flex;
+  justify-content: center;
+}
+#startup #startupCenter #startupIdentity div {
+  position: relative;
+  height: 100%;
+}
+#startup #startupCenter #startupIdentity div svg {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#startup #startupCenter #startupIdentity div svg #startupLogoMain {
+  stroke: #f07;
+}
+#startup #startupCenter #startupIdentity div svg #startupLogoSecondary {
+  stroke: rgba(255, 0, 119, 0.55);
+}
+#startup #startupCenter #startupIdentity div h1 {
+  margin-left: 15px;
+  margin-top: 12px;
+  color: #f07;
+  font-size: 25pt;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "cabin", sans-serif;
+  cursor: default;
+}
+#startup #startupCenter #startupIdentity div h3 {
+  margin-left: 16px;
+  font-size: 13pt;
+  color: #f07;
+  opacity: 0.7;
+  text-align: left;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "raleway", sans-serif;
+  cursor: default;
+}
+#startup #startupCenter #startupWelcome {
+  color: #333;
+  font-size: 18pt;
+  margin-top: 10px;
+  text-align: center;
+}
+#startup #startupCenter #startupIntroduction {
+  color: #707070;
+  max-width: 600px;
+  margin-top: 8px;
+  font-size: 13pt;
+  text-align: center;
+}
+#startup #startupTextboxes {
+  position: relative;
+  width: 500px;
+  height: auto;
+  margin: 20px 0px;
+}
+#startup #startupTextboxes .startupTextbox {
+  position: relative;
+  width: 500px;
+  height: 60px;
+  margin: 10px 0px;
+}
+#startup #startupTextboxes .startupTextbox svg {
+  position: absolute;
+  width: 25px;
+  left: 18px;
+  top: 12px;
+  height: 25px;
+  fill: #f07;
+}
+#startup #startupTextboxes .startupTextbox input[type=text] {
+  width: 500px;
+  height: 50px;
+  color: #f07;
+  font-size: 13pt;
+  background-color: #fff;
+  padding: 0px 20px 0px 70px;
+  box-sizing: border-box;
+  border: 0px;
+  outline: 0;
+}
+#startup #startupTextboxes .startupTextbox input[type=text]:hover::placeholder, #startup #startupTextboxes .startupTextbox input[type=text]:focus::placeholder {
+  color: #f07;
+}
+#startup #startupTextboxes .startupTextbox input[type=text]:hover ~ .inputOuterShadow .inputShadow, #startup #startupTextboxes .startupTextbox input[type=text]:focus ~ .inputOuterShadow .inputShadow {
+  width: 100%;
+  left: 0%;
+}
+#startup #startupTextboxes .startupTextbox .inputOuterShadow {
+  position: relative;
+  width: 100%;
+  left: 0px;
+  height: 2px;
+  background-color: #bbb;
+}
+#startup #startupTextboxes .startupTextbox .inputShadow {
+  position: relative;
+  width: 0%;
+  left: 50%;
+  height: 100%;
+  background-color: #f07;
+  transition: width 0.2s, left 0.2s;
+}
+#startup #startupTextboxes #startupTxtAudio svg {
+  left: 21px;
+}
+#startup #startupButtons {
+  position: relative;
+  width: 500px;
+  height: auto;
+  display: flex;
+}
+#startup #startupButtons #startupButtonClear {
+  position: relative;
+  width: 240px;
+  height: 64px;
+  margin-right: 10px;
+  color: #fff;
+  font-size: 16pt;
+  border-radius: 10px;
+  background-color: #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#startup #startupButtons #startupButtonClear:hover {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+#startup #startupButtons #startupButtonContinue {
+  position: relative;
+  width: 240px;
+  height: 64px;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 16pt;
+  border-radius: 10px;
+  background-color: #f07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#startup #startupButtons #startupButtonContinue:hover {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+#startup hr {
+  width: 580px;
+  border: 0px;
+  margin: 30px 0px 3px;
+  border-bottom: 1px solid #bbb;
+}
+#startup #startupBackup {
+  position: relative;
+  width: 500px;
+  height: auto;
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#startup #startupBackup #startBackupExplanation {
+  color: #707070;
+  font-size: 13pt;
+}
+#startup #startupBackup #startupBackupButton {
+  position: relative;
+  width: 280px;
+  height: 64px;
+  color: #fff;
+  font-size: 16pt;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: #f07;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#startup #startupLang {
+  position: fixed;
+  width: 180px;
+  height: 36px;
+  right: 15px;
+  bottom: 14px;
+  font-size: 13pt;
+}
+#startup #startupLang select {
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  color: #777;
+  font-size: 13pt;
+  padding: 6px 20px;
+  border: 0px;
+}
+#startup #startupLang select:focus {
+  background-color: #eee;
+}
+#startup #startupLinks {
+  position: fixed;
+  left: 10px;
+  bottom: 5px;
+  width: auto;
+  height: 36px;
+}
+#startup #startupLinks a {
+  color: #777;
+  text-decoration: none;
+  cursor: pointer;
+}
+#startup #startupLinks a:hover {
+  color: #222;
+}
+
+/*#startup
+ * position: absolute
+ * width: 100%
+ * height: 100%
+ * background-color: #fff
+ * z-index: 18
+ * display: none
+ * justify-content: center
+ * align-items: center
+ *
+ * #startupBack
+ * position: fixed
+ * width: 100%
+ * height: 100%
+ * stroke: rgba($primary,.015)
+ *
+ * #startupCenter
+ * position: relative
+ * width: 640px
+ * height: auto
+ *
+ * #startupCenterTitle
+ * text-align: center
+ * color: $primary
+ * display: flex
+ * justify-content: center
+ * margin-bottom: 40px
+ *
+ * div
+ *  position: relative
+ *  height: 100%
+ *
+ * svg
+ *  position: relative
+ *  width: 84px
+ *  height: 84px
+ *  margin-top: 5px
+ *  margin-left: 5px
+ *
+ *  #startupLogoMain
+ *   stroke: $primary
+ *
+ *  #startupLogoSecondary
+ *   stroke: rgba($primary,.55)
+ *   //stroke: #ffaad0
+ *
+ * h1
+ *  margin-left: 15px
+ *  margin-top: 12px
+ *  color: $primary
+ *  font-size: 25pt
+ *  font-family: 'Roboto-Light', sans-serif
+ *  font-family: 'cabin', sans-serif
+ *  cursor: default
+ *
+ * h3
+ *  margin-left: 16px
+ *  font-size: 13pt
+ *  color: $primary
+ *  opacity: .7
+ *  text-align: left
+ *  font-family: 'Roboto-Light', sans-serif
+ *  font-family: 'raleway', sans-serif
+ *  cursor: default
+ *
+ * #startupContent
+ * position: relative
+ * width: 100%
+ * height: auto
+ * color: #555
+ *
+ * #startupContentFirst
+ *  margin-bottom: 30px
+ *
+ * #startupFileLocationContainer, #startupCoverLocationContainer
+ *  margin-top: 8px
+ *  padding: 0px 10px
+ *  box-sizing: border-box
+ *  display: flex
+ *
+ *  .inputBox
+ *   margin-top: 5px
+ *   width: 480px
+ *
+ *   #startupFileLocationUrl, #startupCoverLocationUrl
+ *    width: 100%
+ *    background-color: transparent
+ *
+ *    &:placeholder
+ *     color: $primary
+ *
+ *  #startupFileLocationSubmit, #startupCoverLocationSubmit
+ *   position: relative
+ *   width: 100px
+ *   height: 18px
+ *   padding: 6px 20px
+ *   text-align: center
+ *   color: $primary
+ *   border: 1px solid $primary
+ *   border-radius: 50px
+ *   margin-top: 8px
+ *   cursor: pointer
+ *
+ *   &:hover
+ *    color: #fff
+ *    background-color: $primary
+ *
+ * hr
+ *  border: 0px
+ *  border-bottom: 1px solid #ddd
+ *  margin-top: 20px
+ *  margin-bottom: 10px
+ *
+ * #startupCoverText
+ *  margin-top: 30px
+ *
+ * #startupError
+ *  color: #f44336
+ *  text-align: center
+ *  margin-top: 15px
+ *  visibility: hidden
+ *
+ * #startupAcept
+ *  position: relative
+ *  width: 100%
+ *  height: 100px
+ *  display: flex
+ *  align-items: center
+ *  justify-content: center
+ *
+ *  button
+ *   position: relative
+ *   width: 300px
+ *   height: 38px
+ *   font-size: 13pt
+ *   padding: 8px 25px
+ *   text-align: center
+ *   background-color: #fff
+ *   margin-top: 30px
+ *   margin-bottom: 30px
+ *   color: $primary
+ *   border: 1px solid $primary
+ *   border-radius: 60px
+ *   margin-top: 8px
+ *   cursor: pointer
+ *
+ *   &:hover
+ *    color: #fff
+ *    background-color: $primary*/
+#dialogs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  display: none;
+}
+#dialogs .dialog {
+  position: relative;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+#dialogs .dialog .dialogTop {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px 40px 18px;
+  box-sizing: border-box;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#dialogs .dialog .dialogTop h2 {
+  color: #444;
+  cursor: default;
+  font-family: "Roboto-Light", sans-serif;
+}
+#dialogs .dialog .dialogTop .dialogClose {
+  width: 25px;
+  height: 25px;
+  fill: #aaa;
+}
+#dialogs .dialog .dialogTop .dialogClose:hover {
+  fill: #555;
+}
+#dialogs .dialog .dialogContent {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+#dialogs .dialog .dialogContent #dialogOptions {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 25px 0px;
+  display: flex;
+  justify-content: center;
+}
+#dialogs .dialog .dialogContent #dialogOptions .dialogOpt {
+  position: relative;
+  width: 250px;
+  height: auto;
+  color: #f07;
+  padding: 8px 20px;
+  margin: 0px 15px;
+  text-align: center;
+  font-size: 13pt;
+  background-color: #fff;
+  border: 1px solid #f07;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#dialogs .dialog .dialogContent #dialogOptions .dialogOpt:hover {
+  color: #fff;
+  background-color: #f07;
+}
+#dialogs .dialog .dialogContent #dialogOptions .dialogOptCancel {
+  color: #999;
+  border: 1px solid #999;
+}
+#dialogs .dialog .dialogContent #dialogOptions .dialogOptCancel:hover {
+  color: #fff;
+  background-color: #999;
+}
+#dialogs #dialogDeleteSong {
+  width: 650px;
+}
+#dialogs #dialogDeleteSong .dialogDeleteSongText {
+  text-align: center;
+  margin-top: 10px;
+  color: #444;
+}
+#dialogs #dialogDeleteSong .dialogDeleteSongText i {
+  color: #f07;
+}
+#dialogs #dialogCreatePlaylist {
+  width: 700px;
+}
+#dialogs #dialogCreatePlaylist .dialogNewPlaylistText {
+  text-align: center;
+  margin-top: 10px;
+  color: #444;
+}
+#dialogs #dialogCreatePlaylist .dialogNewPlaylistText i {
+  color: #f07;
+}
+#dialogs #dialogRenamePlaylist {
+  width: 700px;
+}
+#dialogs #dialogRenamePlaylist .dialogRenamePlaylistText {
+  text-align: center;
+  margin-top: 10px;
+  color: #444;
+}
+#dialogs #dialogRenamePlaylist .dialogRenamePlaylistText i {
+  color: #f07;
+}
+#dialogs #dialogDeletePlaylist {
+  width: 600px;
+}
+#dialogs #dialogDeletePlaylist .dialogDeletePlaylistText {
+  text-align: center;
+  margin-top: 10px;
+  color: #444;
+}
+#dialogs #dialogDeletePlaylist .dialogDeletePlaylistText i {
+  color: #f07;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#headerResponsive {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 5;
+}
+#headerResponsive #headerResponsiveIdent {
+  position: relative;
+  width: 250px;
+  height: 100%;
+}
+#headerResponsive #headerResponsiveIdent .responsiveAppLogo {
+  position: relative;
+  float: left;
+  margin-left: 18px;
+  margin-right: 15px;
+  /*display: none*/
+}
+#headerResponsive #headerResponsiveIdent .responsiveAppLogo svg {
+  width: 64px;
+  height: 64px;
+  stroke: #f07;
+}
+#headerResponsive #headerResponsiveIdent .responsiveAppLogo svg #responsiveLogoSecondary {
+  stroke: rgba(255, 0, 119, 0.64);
+}
+#headerResponsive #headerResponsiveIdent .responsiveAppLogo svg #responsiveLogoMain {
+  stroke: #f07;
+}
+#headerResponsive #headerResponsiveIdent div h1 {
+  margin-left: 15px;
+  margin-top: 1px;
+  color: #f07;
+  font-size: 22pt;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "cabin", sans-serif;
+  cursor: default;
+}
+#headerResponsive #headerResponsiveIdent div h3 {
+  margin-left: 16px;
+  font-size: 12pt;
+  color: #f07;
+  opacity: 0.7;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "raleway", sans-serif;
+  cursor: default;
+}
+#headerResponsive #headerResponsiveNav {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+#headerResponsive #headerResponsiveNav .headerRespNavOpt {
+  position: relative;
+  width: auto;
+  height: 100%;
+  color: #222;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  font-size: 14pt;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+#headerResponsive #headerResponsiveNav .headerRespNavOpt:hover {
+  background-color: rgba(255, 0, 119, 0.05);
+  border-top: 1px solid rgba(255, 0, 119, 0.28);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.28);
+}
+#headerResponsive #headerResponsiveNav .headerRespNavOpt .headerRespNavOptLogo {
+  width: 25px;
+  height: 25px;
+  margin-top: 2px;
+}
+
+#container main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 80px;
+  box-sizing: border-box;
+  /*flex: 1*/
+  display: flex;
+}
+#container main aside {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  overflow: auto;
+}
+#container main aside header {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  color: #222;
+  padding: 18px 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container main aside header #headerCenter {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#container main aside header #headerCenter div {
+  position: relative;
+  height: 100%;
+}
+#container main aside header svg {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#container main aside header svg #headerLogoMain {
+  stroke: #f07;
+}
+#container main aside header svg #headerLogoSecondary {
+  stroke: rgba(255, 0, 119, 0.55);
+}
+#container main aside header h1 {
+  margin-left: 15px;
+  margin-top: 12px;
+  color: #f07;
+  font-size: 25pt;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "cabin", sans-serif;
+  cursor: default;
+}
+#container main aside header h3 {
+  margin-left: 16px;
+  font-size: 13pt;
+  color: #f07;
+  opacity: 0.7;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "raleway", sans-serif;
+  cursor: default;
+}
+#container main aside nav {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  overflow: auto;
+}
+#container main aside nav #navPlaylistList {
+  display: none;
+}
+#container main aside nav .navOpt {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  color: #222;
+  padding: 5px 50px;
+  box-sizing: border-box;
+  font-size: 14pt;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#container main aside nav .navOpt:hover {
+  background-color: rgba(255, 0, 119, 0.05);
+  border-top: 1px solid rgba(255, 0, 119, 0.28);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.28);
+}
+#container main aside nav .navOpt .navOptLogo {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+#container main aside nav .navOpt .navOptPlaying {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 40px;
+  font-size: 13pt;
+  margin-top: 2px;
+  fill: rgba(255, 0, 119, 0.5);
+  display: none;
+}
+#container main aside nav .navOptActive {
+  background-color: rgba(255, 0, 119, 0.05);
+  border-top: 1px solid rgba(255, 0, 119, 0.28);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.28);
+}
+#container main aside nav .navOptActive:hover {
+  background-color: rgba(255, 0, 119, 0.1);
+  border-top: 1px solid rgba(255, 0, 119, 0.4);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.4);
+}
+#container main aside nav .navOptPlaylistItem {
+  color: #888;
+  height: 40px;
+}
+#container main aside nav .navOptPlaylistItem p {
+  margin-left: 20px;
+}
+#container main aside nav .navOptPlaylistItem.navOpt {
+  border: 0px;
+}
+#container main aside nav .navOptPlaylistItem.navOptActive {
+  border: 0px;
+  background-color: rgba(255, 0, 119, 0.05);
+}
+#container main aside nav .navOptPlaylistItem.navOptActive:hover {
+  background-color: rgba(255, 0, 119, 0.1);
+}
+#container main aside nav #navOptPlaylistItemNull {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #aaa;
+  padding: 5px 50px;
+  box-sizing: border-box;
+  font-size: 14pt;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+#container main aside nav #navOptPlaylistItemNull p {
+  margin-left: 20px;
+}
+#container main section {
+  position: relative;
+  flex: 1;
+  background-color: #fff;
+}
+#container main section #tabHome #tabHomeAlerts {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 10px 0px 20px;
+}
+#container main section #tabHome #tabHomeAlerts .homeAlert {
+  position: relative;
+  margin: 8px auto;
+  width: 82%;
+  height: 38px;
+  border-radius: 5px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  /*background-color: rgba(255,230,3,.15)*/
+  background-color: #FFF9B0;
+}
+#container main section #tabHome #tabHomeAlerts .homeAlert .homeAlertLogo {
+  width: 25px;
+  height: 25px;
+  fill: #f44336;
+}
+#container main section #tabHome #tabHomeAlerts .homeAlert p {
+  color: #555;
+  text-align: left;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  flex: 1;
+}
+#container main section #tabHome #tabHomeAlerts .homeAlert .homeAlertClose {
+  width: 20px;
+  height: 20px;
+  fill: #aaa;
+  cursor: pointer;
+}
+#container main section #tabHome #tabHomeAlerts .homeAlert .homeAlertClose:hover {
+  fill: #555;
+}
+#container main section #tabHome #tabHomeTitle {
+  position: relative;
+  margin: 30px auto 18px;
+  width: 1000px;
+  height: auto;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+#container main section #tabHome #tabHomeTitle #tabHomeTitleRight {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+#container main section #tabHome #tabHomeTitle h2 {
+  font-size: 20pt;
+  margin-bottom: 4px;
+  font-family: "Roboto-Light", sans-serif;
+}
+#container main section #tabHome #tabHomeTitle p {
+  font-size: 13pt;
+}
+#container main section #tabHome #tabHomeFirstSteps {
+  position: relative;
+  margin: 10px auto 20px;
+  width: 1000px;
+  height: 300px;
+  border-radius: 60px;
+  margin-top: 25px;
+  padding: 32px 50px 40px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.04);
+  transition: border-radius 0.2s;
+  display: none;
+}
+#container main section #tabHome #tabHomeFirstSteps:hover {
+  border-radius: 25px;
+}
+#container main section #tabHome #tabHomeFirstSteps #homeFirstStepsTitle {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+#container main section #tabHome #tabHomeFirstSteps #homeFirstStepsTitle h3 {
+  font-size: 16pt;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+#container main section #tabHome #tabHomeFirstSteps #homeFirstStepsTitle #homeFirstStepsClose {
+  fill: #aaa;
+  cursor: pointer;
+}
+#container main section #tabHome #tabHomeFirstSteps #homeFirstStepsTitle #homeFirstStepsClose:hover {
+  fill: #777;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  border-radius: 50px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem div:first-child {
+  display: flex;
+  align-items: center;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem .homeFirstStepsIcon {
+  fill: #f07;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem .homeFirstStepsName {
+  color: #f07;
+  font-size: 16pt;
+  margin-right: 14pt;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem .homeFirstStepsMore {
+  color: #555;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem .homeFirstStepsCompleted {
+  font-size: 13pt;
+  margin-right: 10px;
+  display: none;
+}
+#container main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem .homeFirstStepsCompleted svg {
+  fill: #00c853;
+}
+#container main section #tabHome #tabHomeSuggested {
+  position: relative;
+  margin: 15px auto;
+  width: 1000px;
+  height: auto;
+}
+#container main section #tabHome #tabHomeSuggested #homeSuggestedMore {
+  position: relative;
+  margin: auto;
+  width: 98%;
+  text-align: right;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border-right: 2px solid #f07;
+  cursor: pointer;
+}
+#container main section #tabHome #tabHomeSuggested #homeSuggestedMore:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload {
+  position: relative;
+  height: 100px;
+  margin: 8px 10px;
+  color: #222;
+  border-radius: 8px;
+  background-color: rgba(255, 0, 119, 0.1);
+  cursor: pointer;
+  display: flex;
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem:hover, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload:hover {
+  background-color: rgba(255, 0, 119, 0.2);
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem img, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload img {
+  height: 100%;
+  border-radius: 8px 0px 0px 8px;
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload .homeSuggestText {
+  padding: 8px 14px;
+  flex: 1;
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText .homeSuggestTitle, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload .homeSuggestText .homeSuggestTitle {
+  font-size: 14pt;
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText .homeSuggestArtist, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload .homeSuggestText .homeSuggestArtist {
+  color: #7a7a7a;
+  font-size: 12pt;
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText .homeSuggestDuration, #container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload .homeSuggestText .homeSuggestDuration {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: rgba(255, 0, 119, 0.6);
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload {
+  background-color: #ddd;
+  cursor: default;
+}
+#container main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItemPreload:hover {
+  background-color: #ddd;
+}
+#container main section #tabHome #tabHomeStats {
+  position: relative;
+  width: 1000px;
+  height: auto;
+  margin: 40px auto;
+  display: flex;
+}
+#container main section #tabHome #tabHomeStats .homeStatsItem {
+  position: relative;
+  flex: 1;
+  height: 140px;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+#container main section #tabHome #tabHomeStats .homeStatsItem:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+#container main section #tabHome #tabHomeStats .homeStatsItem h4 {
+  color: #333;
+  font-weight: normal;
+  font-size: 18pt;
+  margin-bottom: 12px;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "courgette", sans-serif;
+}
+#container main section #tabHome #tabHomeStats .homeStatsItem p {
+  color: #555;
+  font-size: 20pt;
+  font-family: "Roboto-Light", sans-serif;
+  font-family: "courgette", sans-serif;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs {
+  position: relative;
+  margin: 10px auto;
+  width: 1000px;
+  height: auto;
+  margin-bottom: 50px;
+  display: none;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs h3 {
+  font-weight: normal;
+  font-size: 17pt;
+  color: #f07;
+  margin-bottom: 18px;
+  cursor: default;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload {
+  position: relative;
+  height: 100px;
+  margin: 8px 10px;
+  color: #222;
+  border-radius: 8px;
+  background-color: rgba(255, 0, 119, 0.1);
+  cursor: pointer;
+  display: flex;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem:hover, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload:hover {
+  background-color: rgba(255, 0, 119, 0.2);
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem img, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload img {
+  height: 100%;
+  border-radius: 8px 0px 0px 8px;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText {
+  padding: 8px 14px;
+  flex: 1;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedTitle, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedTitle {
+  font-size: 14pt;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedArtist, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedArtist {
+  color: #7a7a7a;
+  font-size: 12pt;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedLastPlayed, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedLastPlayed {
+  margin-top: 8px;
+  color: #f07;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedDuration, #container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedDuration {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #fff;
+  background-color: rgba(255, 0, 119, 0.6);
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload {
+  background-color: #ddd;
+  cursor: default;
+}
+#container main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload:hover {
+  background-color: #ddd;
+}
+#container main section #tabHome #tabHomeMostPlayed {
+  position: relative;
+  margin: 10px auto;
+  width: 1000px;
+  height: auto;
+}
+#container main section #tabHome #tabHomeMostPlayed h3 {
+  font-weight: normal;
+  font-size: 17pt;
+  color: #f07;
+  margin-bottom: 18px;
+  cursor: default;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f4f4f4;
+  display: flex;
+  align-items: center;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem p {
+  cursor: default;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem .mostPlayedNumber {
+  width: 100px;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem .mostPlayedTitle {
+  width: 340px;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem .mostPlayedArtist {
+  width: 280px;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem .mostPlayedTimesPlayed {
+  width: 100px;
+  text-align: right;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItemMore {
+  display: none;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedMore {
+  position: relative;
+  text-align: right;
+  padding: 8px 10px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  border-right: 2px solid #f07;
+  cursor: pointer;
+}
+#container main section #tabHome #tabHomeMostPlayed #homeMostPlayedMore:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+#container main section .tab {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+}
+#container main section .tab .tabTop {
+  position: relative;
+  width: 100%;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+#container main section .tab .tabTop #tabTopBackIcon {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 120px;
+  top: 5px;
+  fill: #fff;
+  stroke: rgba(0, 0, 0, 0.06);
+}
+#container main section .tab .tabTop h2 {
+  color: #222;
+  font-size: 21pt;
+  margin-top: 3px;
+  font-family: "Roboto-Light", sans-serif;
+}
+#container main section .tab .tabTop .tabTopLeft {
+  padding: 3px;
+}
+#container main section .tab .tabTop .tabTopRight {
+  display: flex;
+}
+#container main section .tab .tabTop .tabTopRight hr {
+  margin-right: 25px;
+  border: 0px;
+  border-right: 1px solid #e4e4e4;
+  -webkit-transform: rotate(90deg);
+}
+#container main section .tab .tabTop .tabTopRight .btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#container main section .tab .tabTop .tabTopRight .btn:hover {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+#container main section .tab .tabTop .tabTopRight .btn svg {
+  fill: #f07;
+}
+#container main section .tab .tabTop .tabTopRight .btnPause {
+  display: none;
+}
+#container main section .tab .tabTop .tabTopRight .btnContinue {
+  display: none;
+}
+#container main section .tab .tabTop .tabTopRight .btnShuffle svg {
+  fill: #aaa;
+}
+#container main section .tab .tabTop .tabTopRight .btnShuffleAllSongsActive svg {
+  fill: #f07;
+}
+#container main section .tab .tabTop .tabTopRight #btnAddSong {
+  margin-right: 25px;
+}
+#container main section .tab .tabTopSub {
+  position: relative;
+  width: 100%;
+  padding: 15px 0px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  display: flex;
+}
+#container main section .tab .tabTopSub p {
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+#container main section .tab #addSongContent .addSongItem, #container main section .tab #editSongContent .addSongItem {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+#container main section .tab #addSongContent .addSongItem p:first-child, #container main section .tab #editSongContent .addSongItem p:first-child {
+  width: 180px;
+}
+#container main section .tab #addSongContent .addSongItem .inputBox, #container main section .tab #editSongContent .addSongItem .inputBox {
+  margin: 0px 20px;
+}
+#container main section .tab #addSongContent .addSongItem #addSongImageSelector, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector, #container main section .tab #editSongContent .addSongItem #addSongImageSelector, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector {
+  position: relative;
+  width: 140px;
+  height: 80px;
+  padding: 20px 0px;
+  box-sizing: border-box;
+  margin-right: 15px;
+}
+#container main section .tab #addSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton, #container main section .tab #addSongContent .addSongItem #addSongImageSelector #addSongUrlSelectorButton, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector #addSongImageSelectorButton, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton, #container main section .tab #editSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton, #container main section .tab #editSongContent .addSongItem #addSongImageSelector #addSongUrlSelectorButton, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector #addSongImageSelectorButton, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton {
+  position: relative;
+  width: 100px;
+  height: auto;
+  text-align: center;
+  padding: 6px 20px;
+  color: #f07;
+  border-radius: 50px;
+  background-color: #fff;
+  border: 1px solid #f07;
+  cursor: pointer;
+  margin: 4px 0px;
+}
+#container main section .tab #addSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton:hover, #container main section .tab #addSongContent .addSongItem #addSongImageSelector #addSongUrlSelectorButton:hover, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector #addSongImageSelectorButton:hover, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton:hover, #container main section .tab #editSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton:hover, #container main section .tab #editSongContent .addSongItem #addSongImageSelector #addSongUrlSelectorButton:hover, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector #addSongImageSelectorButton:hover, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton:hover {
+  color: #fff;
+  background-color: #f07;
+}
+#container main section .tab #addSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton p, #container main section .tab #addSongContent .addSongItem #addSongImageSelector #addSongUrlSelectorButton p, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector #addSongImageSelectorButton p, #container main section .tab #addSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton p, #container main section .tab #editSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton p, #container main section .tab #editSongContent .addSongItem #addSongImageSelector #addSongUrlSelectorButton p, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector #addSongImageSelectorButton p, #container main section .tab #editSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton p {
+  width: auto;
+}
+#container main section .tab #addSongContent .addSongItem .addSongRequired, #container main section .tab #editSongContent .addSongItem .addSongRequired {
+  color: #ff1d1d;
+  padding: 2px 4px;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+#container main section #tabSongs #songsTop {
+  position: relative;
+  width: 100%;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+#container main section #tabSongs #songsTop h2 {
+  color: #222;
+  font-size: 21pt;
+  margin-top: 3px;
+  font-family: "Roboto-Light", sans-serif;
+}
+#container main section #tabSongs #songsTop #songsTopLeft {
+  padding: 3px;
+}
+#container main section #tabSongs #songsTop #songsTopLeft .tabTopLeftTitle {
+  display: flex;
+}
+#container main section #tabSongs #songsTop #songsTopLeft .tabTopLeftTitle svg {
+  width: 25px;
+  height: 25px;
+  fill: #f07;
+  margin-left: 10px;
+  margin-top: 9px;
+  display: none;
+}
+#container main section #tabSongs #songsTop #songsTopLeft p {
+  color: #555;
+}
+#container main section #tabSongs #songsTop #songsTopRight {
+  display: flex;
+}
+#container main section #tabSongs #songsTop #songsTopRight .searchBoxContainer {
+  position: relative;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+#container main section #tabSongs #songsTop #songsTopRight .searchBoxContainer .inputBox input {
+  width: 250px;
+  margin-top: 4px;
+  margin-right: 10px;
+  padding: 0px 10px 0px 45px;
+}
+#container main section #tabSongs #songsTop #songsTopRight hr {
+  margin-right: 25px;
+  border: 0px;
+  border-right: 1px solid #e4e4e4;
+  transform: rotate(0deg);
+}
+#container main section #tabSongs #songsTop #songsTopRight .btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#container main section #tabSongs #songsTop #songsTopRight .btn:hover {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+#container main section #tabSongs #songsTop #songsTopRight .btn svg {
+  fill: #f07;
+}
+#container main section #tabSongs #songsTop #songsTopRight .btnPause {
+  display: none;
+}
+#container main section #tabSongs #songsTop #songsTopRight .btnContinue {
+  display: none;
+}
+#container main section #tabSongs #songsTop #songsTopRight .btnShuffle svg {
+  fill: #aaa;
+}
+#container main section #tabSongs #songsTop #songsTopRight .btnShuffleAllSongsActive svg {
+  fill: #f07;
+}
+#container main section #tabSongs #songsTop #songsTopRight #btnAddSong {
+  margin-right: 25px;
+}
+#container main section #tabPlaylists #playlistTop {
+  position: relative;
+  width: 100%;
+  padding: 20px 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+#container main section #tabPlaylists #playlistTop h2 {
+  color: #222;
+  font-size: 21pt;
+  margin-top: 3px;
+  font-family: "Roboto-Light", sans-serif;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopLeft {
+  padding: 3px;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopLeft .tabTopLeftTitle {
+  display: flex;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopLeft .tabTopLeftTitle svg {
+  width: 25px;
+  height: 25px;
+  fill: #f07;
+  margin-left: 10px;
+  margin-top: 9px;
+  display: none;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight {
+  display: flex;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .searchBoxContainer {
+  position: relative;
+  width: auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .searchBoxContainer .inputBox input {
+  width: 250px;
+  margin-top: 4px;
+  margin-right: 10px;
+  padding: 0px 10px 0px 45px;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .searchBoxContainer .inputBox .inputBoxIcon {
+  top: 23px;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-right: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btn:hover {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btn svg {
+  fill: #f07;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btnPause {
+  display: none;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btnContinue {
+  display: none;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btnShuffle svg {
+  fill: #aaa;
+}
+#container main section #tabPlaylists #playlistTop #playlistTopRight .btnShuffleAllSongsActive svg {
+  fill: #f07;
+}
+#container main section #tabSongs #songsTopFields, #container main section #tabPlaylists #songsTopFields {
+  position: relative;
+  width: 100%;
+  padding: 5px 0px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+#container main section #tabSongs #songsTopFields .songsRow, #container main section #tabPlaylists #songsTopFields .songsRow {
+  padding: 10px 0px;
+  margin-right: 5px;
+}
+#container main section #tabSongs #songsRowOrder, #container main section #tabPlaylists #songsRowOrder {
+  width: 50px;
+  text-align: center;
+}
+#container main section #tabSongs #songsRowImage, #container main section #tabPlaylists #songsRowImage {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#container main section #tabSongs #songsRowImage img, #container main section #tabPlaylists #songsRowImage img {
+  width: auto;
+  max-height: 40px;
+  border-radius: 6px;
+}
+#container main section #tabSongs #songsRowTitle, #container main section #tabPlaylists #songsRowTitle {
+  width: 280px;
+}
+#container main section #tabSongs #songsRowArtist, #container main section #tabPlaylists #songsRowArtist {
+  width: 160px;
+}
+#container main section #tabSongs #songsRowAlbum, #container main section #tabPlaylists #songsRowAlbum {
+  width: 200px;
+}
+#container main section #tabSongs #songsRowGenre, #container main section #tabPlaylists #songsRowGenre {
+  width: 120px;
+}
+#container main section #tabSongs #songsRowDuration, #container main section #tabPlaylists #songsRowDuration {
+  width: 90px;
+  text-align: center;
+}
+#container main section #tabSongs #songsRowAddedIn, #container main section #tabPlaylists #songsRowAddedIn {
+  width: 160px;
+  text-align: center;
+}
+#container main section #tabSongs #songsRowActions, #container main section #tabPlaylists #songsRowActions {
+  flex: 1;
+}
+#container main section #tabSongs #listAllSongs, #container main section #tabSongs #listAllPlaylistSongs, #container main section #tabPlaylists #listAllSongs, #container main section #tabPlaylists #listAllPlaylistSongs {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+#container main section #tabSongs #listAllSongs .allSongsItem, #container main section #tabSongs #listAllPlaylistSongs .allSongsItem, #container main section #tabPlaylists #listAllSongs .allSongsItem, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItem {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  cursor: default;
+}
+#container main section #tabSongs #listAllSongs .allSongsItem:hover, #container main section #tabSongs #listAllPlaylistSongs .allSongsItem:hover, #container main section #tabPlaylists #listAllSongs .allSongsItem:hover, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItem:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#container main section #tabSongs #listAllSongs .allSongsItem .songsRow, #container main section #tabSongs #listAllPlaylistSongs .allSongsItem .songsRow, #container main section #tabPlaylists #listAllSongs .allSongsItem .songsRow, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItem .songsRow {
+  padding: 15px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 5px;
+}
+#container main section #tabSongs #listAllSongs .allSongsItem .songsRow .iconSongAvoided, #container main section #tabSongs #listAllPlaylistSongs .allSongsItem .songsRow .iconSongAvoided, #container main section #tabPlaylists #listAllSongs .allSongsItem .songsRow .iconSongAvoided, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItem .songsRow .iconSongAvoided {
+  width: 26px;
+  height: 26px;
+  fill: #555;
+  margin-top: -2px;
+}
+#container main section #tabSongs #listAllSongs .allSongsItem #songsRowImage, #container main section #tabSongs #listAllPlaylistSongs .allSongsItem #songsRowImage, #container main section #tabPlaylists #listAllSongs .allSongsItem #songsRowImage, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItem #songsRowImage {
+  padding: 0px;
+}
+#container main section #tabSongs #listAllSongs .allSongsItem #songsRowTitle, #container main section #tabSongs #listAllPlaylistSongs .allSongsItem #songsRowTitle, #container main section #tabPlaylists #listAllSongs .allSongsItem #songsRowTitle, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItem #songsRowTitle {
+  padding: 15px 0px;
+}
+#container main section #tabSongs #listAllSongs .songsItemSelected, #container main section #tabSongs #listAllPlaylistSongs .songsItemSelected, #container main section #tabPlaylists #listAllSongs .songsItemSelected, #container main section #tabPlaylists #listAllPlaylistSongs .songsItemSelected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#container main section #tabSongs #listAllSongs .allSongsItemPlaying, #container main section #tabSongs #listAllPlaylistSongs .allSongsItemPlaying, #container main section #tabPlaylists #listAllSongs .allSongsItemPlaying, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItemPlaying {
+  color: #f07;
+  background-color: rgba(255, 0, 119, 0.1);
+}
+#container main section #tabSongs #listAllSongs .allSongsItemPlaying:hover, #container main section #tabSongs #listAllPlaylistSongs .allSongsItemPlaying:hover, #container main section #tabPlaylists #listAllSongs .allSongsItemPlaying:hover, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItemPlaying:hover {
+  background-color: rgba(255, 0, 119, 0.15);
+}
+#container main section #tabSongs #listAllSongs .allSongsItemAvoided, #container main section #tabSongs #listAllPlaylistSongs .allSongsItemAvoided, #container main section #tabPlaylists #listAllSongs .allSongsItemAvoided, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsItemAvoided {
+  opacity: 0.5;
+}
+#container main section #tabSongs #listAllSongs .allSongsNoResults, #container main section #tabSongs #listAllPlaylistSongs .allSongsNoResults, #container main section #tabPlaylists #listAllSongs .allSongsNoResults, #container main section #tabPlaylists #listAllPlaylistSongs .allSongsNoResults {
+  padding: 15px 50px;
+  box-sizing: border-box;
+}
+#container main section #tabSettings #settingsLastUpdated {
+  position: relative;
+  width: 100%;
+  padding: 15px 0px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#container main section #tabSettings #settingsLastUpdated p {
+  padding: 0px 30px;
+  box-sizing: border-box;
+}
+#container main section #tabSettings #settingsContent {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+#container main section #tabSettings #settingsContent .settingsItem {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 24px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemTop {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 17px 55px;
+  box-sizing: border-box;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemTop p {
+  font-size: 16pt;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 10px 55px;
+  box-sizing: border-box;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions {
+  display: flex;
+  align-items: center;
+  margin: 12px;
+  margin-bottom: 25px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions #downloadData {
+  width: 160px;
+  padding: 5px 20px;
+  color: #f07;
+  font-size: 13pt;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #f07;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions #downloadData:hover {
+  color: #fff;
+  background-color: #f07;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions #lastDownload {
+  color: #777;
+  font-style: italic;
+  margin: 5px 15px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions {
+  display: flex;
+  align-items: center;
+  margin: 12px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreData, #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreConfirm {
+  width: 160px;
+  padding: 5px 20px;
+  color: #f07;
+  font-size: 13pt;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #f07;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreData:hover, #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreConfirm:hover {
+  color: #fff;
+  background-color: #f07;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreInfo {
+  color: #777;
+  font-style: italic;
+  margin: 5px 15px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreConfirm {
+  width: 100px;
+  margin-left: 10px;
+  display: none;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsNavPlaylistsOptions, #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDarkModeOptions {
+  margin: 10px 0px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsNavPlaylistsOptions label, #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDarkModeOptions label {
+  margin: 0px 20px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsNavPlaylistsOptions input[type=radio], #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDarkModeOptions input[type=radio] {
+  vertical-align: top;
+  margin-top: 3px;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox {
+  position: relative;
+  width: 250px;
+  margin: 20px 20px 12px;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect {
+  width: 100%;
+  height: 40px;
+  font-size: 13pt;
+  padding: 0px 14px;
+  outline: 0;
+  border: 0px;
+  border-bottom: 0px solid #f07;
+  box-sizing: border-box;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:hover, #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:focus {
+  color: #f07;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:hover ~ .selectShadow, #container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:focus ~ .selectShadow {
+  width: 100%;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .selectShadow {
+  width: 0px;
+  height: 1px;
+  border-bottom: 2px solid #f07;
+  transition: width 0.2s;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsSpaceCenter {
+  position: relative;
+  padding: 14px 28px;
+  box-sizing: border-box;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsSpaceCenter #settingsSpaceSize {
+  position: relative;
+  height: 14px;
+  margin: 12px 0px;
+  display: flex;
+  align-items: center;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsSpaceCenter #settingsSpaceSize #settingsSpaceBar {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #eee;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsSpaceCenter #settingsSpaceSize #settingsSpaceBar #settingsSpaceBarFill {
+  height: 100%;
+  border-radius: 4px;
+  max-width: 100%;
+  background-color: #f07;
+}
+#container main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsSpaceCenter #settingsSpaceSize #settingsSpaceNumber {
+  padding: 0px 8px;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidCell {
+  position: relative;
+  height: 100%;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongTitle {
+  width: 350px;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongArtist {
+  width: 250px;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongEndDate {
+  width: 180px;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongUnAvoid {
+  width: 155px;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongUnAvoid svg {
+  width: 24px;
+  height: 24px;
+  fill: #555;
+  margin-top: -1px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongUnAvoid svg:hover {
+  fill: #f00;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList #settingsAvoidedSongNoResults {
+  padding: 0px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList #settingsAvoidedTop {
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+}
+#container main section #tabSettings #settingsContent .settingsItem #settingsAvoidedList #settingsAvoidedTop:hover {
+  background-color: transparent;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer {
+  margin-top: 8px;
+  margin-bottom: 6px;
+  display: flex;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer .inputBox, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer .inputBox {
+  margin-top: 5px;
+  width: 480px;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer .inputBox #settingsFileLocationUrl, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer .inputBox #settingsCoverLocationUrl, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer .inputBox #settingsFileLocationUrl, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer .inputBox #settingsCoverLocationUrl {
+  width: 100%;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer #settingsFileLocationSubmit, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer #settingsCoverLocationSubmit, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer #settingsFileLocationSubmit, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer #settingsCoverLocationSubmit {
+  position: relative;
+  width: 100px;
+  height: 18px;
+  padding: 6px 20px;
+  text-align: center;
+  color: #f07;
+  border: 1px solid #f07;
+  border-radius: 50px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer #settingsFileLocationSubmit:hover, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer #settingsCoverLocationSubmit:hover, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer #settingsFileLocationSubmit:hover, #container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer #settingsCoverLocationSubmit:hover {
+  color: #fff;
+  background-color: #f07;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverText {
+  margin-top: 30px;
+}
+#container main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer {
+  margin-bottom: 20px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  height: auto;
+  min-height: 80px;
+  background-color: #f07;
+  z-index: 10;
+}
+footer #footerOld {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: none;
+}
+footer #footerOld #footerSongInfo {
+  position: relative;
+  width: auto;
+  min-width: 380px;
+  height: 100%;
+  display: flex;
+}
+footer #footerOld #footerSongInfo #footerSongImage {
+  position: relative;
+  width: 80px;
+  height: 100%;
+  overflow: hidden;
+}
+footer #footerOld #footerSongInfo #footerSongImage img {
+  width: 100%;
+  height: 100%;
+}
+footer #footerOld #footerSongInfo #footerSongDetails {
+  position: relative;
+  width: auto;
+  color: #fff;
+  padding: 16px 15px;
+}
+footer #footerOld #footerSongInfo #footerSongDetails #footerSongTitle {
+  font-size: 17pt;
+}
+footer #footerOld #footerSongInfo #footerSongDetails #footerSongArtist {
+  font-size: 13pt;
+}
+footer #footerOld #footerControls {
+  position: relative;
+  width: 210px;
+  height: 100%;
+}
+footer #footerOld #footerTrack {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+footer #footerOld #footerTrack audio {
+  width: 100%;
+  margin: 12px 0px 10px;
+}
+footer #footerOld #footerTrack audio::-webkit-media-controls-panel {
+  background-color: #f07;
+  border: 0px;
+}
+footer #footerMain {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  display: flex;
+}
+footer #footerMain #footerSongInfo {
+  position: relative;
+  width: auto;
+  width: 360px;
+  height: 100%;
+  display: flex;
+}
+footer #footerMain #footerSongInfo #footerSongImage {
+  position: relative;
+  width: 80px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer #footerMain #footerSongInfo #footerSongImage img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(34, 34, 34, 0.1);
+  transition: box-shadow 0.2s;
+}
+footer #footerMain #footerSongInfo #footerSongImage img:hover {
+  box-shadow: 2px 2px 8px rgba(34, 34, 34, 0.4);
+}
+footer #footerMain #footerSongInfo #footerSongDetails {
+  position: relative;
+  width: auto;
+  color: #fff;
+  padding: 16px 12px;
+  cursor: default;
+}
+footer #footerMain #footerSongInfo #footerSongDetails #footerSongTitle {
+  font-size: 17pt;
+  font-family: "Roboto-Light", sans-serif;
+}
+footer #footerMain #footerSongInfo #footerSongDetails #footerSongArtist {
+  opacity: 0.8;
+  font-size: 13pt;
+  font-family: "Roboto-Light", sans-serif;
+}
+footer #footerMain #footerControls {
+  position: relative;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+}
+footer #footerMain #footerControls #footerControlsCenter {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+footer #footerMain #footerControls #footerControlsCenter .footerBtn {
+  position: relative;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #footerMain #footerControls #footerControlsCenter .footerBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+footer #footerMain #footerControls #footerControlsCenter .footerBtn svg {
+  fill: #fff;
+  opacity: 1;
+}
+footer #footerMain #footerControls #footerControlsCenter .footerBtnDisabled:hover {
+  background-color: transparent;
+}
+footer #footerMain #footerControls #footerControlsCenter .footerBtnDisabled svg {
+  fill: #fff;
+  opacity: 0.5;
+}
+footer #footerMain #footerControls #footerControlsCenter #footerControlPlay {
+  display: block;
+}
+footer #footerMain #footerControls #footerControlsCenter #footerControlPause {
+  display: none;
+}
+footer #footerMain #footerAudio {
+  display: none;
+}
+footer #footerMain #footerTrack {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+footer #footerMain #footerTrack #footerSeekTrack {
+  position: relative;
+  width: 100%;
+  display: flex;
+  visibility: hidden;
+}
+footer #footerMain #footerTrack #footerSeekTrack p {
+  color: #eee;
+  padding: 0px 8px;
+  font-family: "Roboto-Light", sans-serif;
+  cursor: default;
+}
+footer #footerMain #footerTrack #footerSeekTrack #seekTrack {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(16, 30, 93, 0.2);
+  outline: none;
+  opacity: 1;
+  margin-top: 7px;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+footer #footerMain #footerTrack #footerSeekTrack #seekTrack:hover {
+  opacity: 1;
+}
+footer #footerMain #footerTrack #footerSeekTrack #seekTrack::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+footer #footerMain #footerTrack #footerSeekTrack #seekTrack::-moz-range-thumb {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: pointer;
+}
+footer #footerMain #footerTrack #footerSeekTrack:hover #seekTrack::-webkit-slider-thumb {
+  visibility: visible;
+  width: 22px;
+  height: 22px;
+}
+footer #footerMain #footerTrack #footerSeekTrack:hover #seekTrack::-moz-slider-thumb {
+  visibility: visible;
+  width: 22px;
+  height: 22px;
+}
+footer #footerMain #footerVolume {
+  position: relative;
+  width: 170px;
+  height: 100%;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+footer #footerMain #footerVolume #footerSeekVolume {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+}
+footer #footerMain #footerVolume #footerSeekVolume svg {
+  fill: #fff;
+  margin-top: 5px;
+  margin-right: 8px;
+}
+footer #footerMain #footerVolume #footerSeekVolume p {
+  color: #eee;
+  width: 36px;
+  padding-left: 8px;
+  font-family: "Roboto-Light", sans-serif;
+  cursor: default;
+}
+footer #footerMain #footerVolume #footerSeekVolume #volumeTrack {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(16, 30, 93, 0.2);
+  outline: none;
+  opacity: 1;
+  margin-top: 1px;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+}
+footer #footerMain #footerVolume #footerSeekVolume #volumeTrack:hover {
+  opacity: 1;
+}
+footer #footerMain #footerVolume #footerSeekVolume #volumeTrack::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+footer #footerMain #footerVolume #footerSeekVolume #volumeTrack::-moz-range-thumb {
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: #2196f3;
+  cursor: pointer;
+}
+footer #footerMain #footerVolume #footerSeekVolume:hover #volumeTrack::-webkit-slider-thumb {
+  visibility: visible;
+  width: 18px;
+  height: 18px;
+}
+footer #footerMain #footerVolume #footerSeekVolume:hover #volumeTrack::-moz-slider-thumb {
+  visibility: visible;
+  width: 18px;
+  height: 18px;
+}
+footer #footerMore {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  display: none;
+}
+
+.inputBox input[type=text] {
+  position: relative;
+  width: 350px;
+  height: 40px;
+  font-size: 13pt;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0px;
+}
+.inputBox input[type=text]:hover ~ .inputBoxShadow, .inputBox input[type=text]:focus ~ .inputBoxShadow {
+  width: 100%;
+}
+.inputBox .inputBoxShadow {
+  position: relative;
+  width: 0px;
+  height: 1px;
+  background-color: #f07;
+  transition: width 0.2s;
+}
+.inputBox .inputBoxShadowRight {
+  position: absolute;
+  right: 0px;
+}
+.inputBox .inputBoxIcon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 24px;
+  fill: #f07;
+  z-index: 1;
+}
+.inputBox .inputBoxClear {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 12px;
+  top: 24px;
+  fill: #f07;
+  z-index: 1;
+  display: none;
+}
+.inputBox input[type=text]:hover ~ label .inputBoxClear, .inputBox input[type=text]:focus ~ label .inputBoxClear {
+  display: block;
+}
+
+/* ---- context menu ---- */
+#context {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  opacity: 0.8;
+  cursor: default;
+  display: none;
+  z-index: 15;
+  -webkit-transition: left 0.5s, top 0.5s, opacity 0.4s;
+  -moz-transition: left 0.5s, top 0.5s, opacity 0.4s;
+  -o-transition: left 0.5s, top 0.5s, opacity 0.4s;
+  -ms-transition: left 0.5s, top 0.5s, opacity 0.4s;
+}
+#context:hover {
+  opacity: 1;
+}
+#context ul {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 5px 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+#context ul li {
+  position: relative;
+  width: 100%;
+  height: auto;
+  color: #282828;
+  font-size: 12pt;
+  border-radius: 50%;
+  padding: 12px 0px;
+  text-align: center;
+  box-sizing: border-box;
+}
+#context ul li:hover {
+  border-radius: 0px;
+  color: #fff;
+  background-color: #2177ff;
+}
+#context ul li.disabled {
+  color: rgba(40, 40, 40, 0.5);
+}
+#context ul li.disabled:hover {
+  color: #ffffff;
+  background-color: #b4b4b4;
+}
+#context ul #contextSelectPlaylist {
+  position: absolute;
+  width: 180px;
+  left: 100%;
+  margin-top: -43px;
+  background-color: #fff;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+#context ul #contextAddPlaylist:hover ~ #contextSelectPlaylist, #context ul #contextSelectPlaylist:hover {
+  display: block;
+}
+
+#errorReporting {
+  position: absolute;
+  width: auto;
+  height: auto;
+  right: 0px;
+  top: 50px;
+  display: none;
+  z-index: 20;
+}
+#errorReporting .errorReportingBox {
+  position: relative;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 50px;
+  color: #fff;
+  padding: 4px 30px;
+  box-sizing: border-box;
+  background-color: #f44336;
+  visibility: hidden;
+  transition: visibility 2s;
+  display: flex;
+  align-items: center;
+}
+#errorReporting .errorReportCode {
+  padding-right: 8px;
+  opacity: 0.8;
+  border-right: 2px solid rgba(255, 255, 255, 0.6);
+}
+#errorReporting .errorReportTxt {
+  padding-left: 8px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  background-color: #F7F7F7;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F7F7F7;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #dfdfdf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #c4c4c4;
+}
+
+#container.darkContainer ::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  background-color: #090b10;
+}
+
+#container.darkContainer ::-webkit-scrollbar {
+  width: 10px;
+  background-color: #0d1117;
+}
+
+#container.darkContainer ::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+#container.darkContainer ::-webkit-scrollbar-thumb:hover {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #777;
+}
+
+#container.darkContainer #headerResponsive {
+  background-color: #090b10;
+}
+#container.darkContainer #headerResponsive #headerResponsiveNav .headerRespNavOpt .headerRespNavOptLogo {
+  fill: #fff;
+}
+#container.darkContainer #headerResponsive #headerResponsiveNav .headerRespNavOpt {
+  color: #fff;
+}
+#container.darkContainer main aside {
+  background-color: #090b10;
+}
+#container.darkContainer main aside header svg #headerLogoSecondary {
+  stroke: rgba(255, 0, 119, 0.64);
+}
+#container.darkContainer main aside header h3 {
+  color: #fff;
+}
+#container.darkContainer main aside nav .navOpt {
+  color: #fff;
+}
+#container.darkContainer main aside nav .navOpt:hover {
+  background-color: rgba(255, 0, 119, 0.3);
+  border-top: 1px solid rgba(255, 0, 119, 0.6);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.3);
+}
+#container.darkContainer main aside nav .navOpt .navOptLogo {
+  fill: #fff;
+}
+#container.darkContainer main aside nav .navOptActive {
+  background-color: rgba(255, 0, 119, 0.3);
+  border-top: 1px solid rgba(255, 0, 119, 0.6);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.6);
+}
+#container.darkContainer main aside nav .navOptActive:hover {
+  background-color: rgba(255, 0, 119, 0.4);
+  border-top: 1px solid rgba(255, 0, 119, 0.7);
+  border-bottom: 1px solid rgba(255, 0, 119, 0.7);
+}
+#container.darkContainer main aside nav .navOptPlaylistItem.navOptActive {
+  border: 0px;
+  background-color: rgba(255, 0, 119, 0.3);
+}
+#container.darkContainer main aside nav .navOptPlaylistItem.navOptActive:hover {
+  background-color: rgba(255, 0, 119, 0.4);
+}
+#container.darkContainer main aside nav .navOptPlaylistItem:hover {
+  border: 0px;
+  background-color: rgba(255, 0, 119, 0.2);
+}
+#container.darkContainer main section {
+  background-color: #0d1117;
+}
+#container.darkContainer main section .tab .tabTop h2 {
+  color: #fff;
+}
+#container.darkContainer main section .tab .tabTop #tabTopInfo {
+  color: #ddd;
+}
+#container.darkContainer main section .tab .tabTop #tabTopBackIcon {
+  fill: #0d1117;
+  stroke: rgba(255, 255, 255, 0.15);
+}
+#container.darkContainer main section .tab .tabTop .tabTopRight .btn {
+  border: 1px solid #0d1117;
+  background-color: #0d1117;
+}
+#container.darkContainer main section .tab .tabTop .tabTopRight .btn:hover {
+  border: 1px solid #555;
+}
+#container.darkContainer main section .tab .tabTopSub {
+  color: #eee;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+#container.darkContainer main section #tabHome #tabHomeAlerts .homeAlert {
+  background-color: #EEB76B;
+  /*background-color: rgba(255,230,3,.8)*/
+}
+#container.darkContainer main section #tabHome #tabHomeAlerts .homeAlert .homeAlertLogo {
+  fill: #c90e00;
+}
+#container.darkContainer main section #tabHome #tabHomeAlerts .homeAlert p {
+  color: #222;
+}
+#container.darkContainer main section #tabHome #tabHomeAlerts .homeAlert .homeAlertClose {
+  fill: #222;
+}
+#container.darkContainer main section #tabHome #tabHomeTitle {
+  color: #fff;
+}
+#container.darkContainer main section #tabHome #tabHomeFirstSteps {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+#container.darkContainer main section #tabHome #tabHomeFirstSteps #homeFirstStepsTitle {
+  color: #fff;
+}
+#container.darkContainer main section #tabHome #tabHomeFirstSteps #homeFirstStepsClose {
+  fill: #555;
+}
+#container.darkContainer main section #tabHome #tabHomeFirstSteps #homeFirstStepsClose:hover {
+  fill: #aaa;
+}
+#container.darkContainer main section #tabHome #tabHomeFirstSteps .homeFirstStepsItem .homeFirstStepsMore {
+  color: #bbb;
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText .homeSuggestTitle {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText .homeSuggestArtist {
+  color: #bbb;
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #tabHomeSuggestedSection .homeSuggestItem .homeSuggestText .homeSuggestDuration {
+  background-color: rgba(9, 11, 16, 0.2);
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #homeSuggestedMore {
+  color: #eee;
+}
+#container.darkContainer main section #tabHome #tabHomeSuggested #homeSuggestedMore:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+#container.darkContainer main section #tabHome #tabHomeStats .homeStatsItem h4 {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabHome #tabHomeStats .homeStatsItem p {
+  color: #ddd;
+}
+#container.darkContainer main section #tabHome #tabHomeStats .homeStatsItem:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem, #container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem:hover, #container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedTitle, #container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedTitle {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedArtist, #container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedArtist {
+  color: #bbb;
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedLastPlayed, #container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedLastPlayed {
+  color: #f07;
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItem .homeNotPlayedText .homeNotPlayedDuration, #container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload .homeNotPlayedText .homeNotPlayedDuration {
+  background-color: rgba(9, 11, 16, 0.2);
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#container.darkContainer main section #tabHome #tabHomeNotPlayedSongs #homeNotPlayedCenter .homeNotPlayedItemPreload:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+#container.darkContainer main section #tabHome #tabHomeMostPlayed h3 {
+  color: #f4f4f4;
+  color: #f07;
+}
+#container.darkContainer main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem {
+  color: #eee;
+  border-bottom: 1px solid #333;
+}
+#container.darkContainer main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem:first-child {
+  border-top: 1px solid #333;
+}
+#container.darkContainer main section #tabHome #tabHomeMostPlayed #homeMostPlayedList .homeMostPlayedItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#container.darkContainer main section #tabHome #tabHomeMostPlayed #homeMostPlayedMore {
+  color: #eee;
+}
+#container.darkContainer main section #tabHome #tabHomeMostPlayed #homeMostPlayedMore:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+#container.darkContainer main section #tabSongs #songsTop h2 {
+  color: #fff;
+}
+#container.darkContainer main section #tabSongs #songsTop #songsTopLeft p {
+  color: #ddd;
+}
+#container.darkContainer main section #tabSongs #songsTop #songsTopRight .searchBoxContainer .inputBox input {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #tabSongs #songsTop #songsTopRight .searchBoxContainer .inputBox input::placeholder {
+  color: #ddd;
+}
+#container.darkContainer main section #tabSongs #songsTop #songsTopRight hr {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+#container.darkContainer main section #tabSongs #songsTop #songsTopRight .btn {
+  background-color: #0d1117;
+  border: 1px solid #0d1117;
+}
+#container.darkContainer main section #tabSongs #songsTop #songsTopRight .btn:hover {
+  border: 1px solid #707070;
+}
+#container.darkContainer main section #tabSongs #songsTopFields {
+  border-top: 1px solid #383838;
+  border-bottom: 1px solid #383838;
+}
+#container.darkContainer main section #tabSongs #songsTopFields .songsRow {
+  color: #eee;
+}
+#container.darkContainer main section #tabSongs #listAllSongs .allSongsItem {
+  color: #eee;
+}
+#container.darkContainer main section #tabSongs #listAllSongs .allSongsItem:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+#container.darkContainer main section #tabSongs #listAllSongs .allSongsItemPlaying {
+  color: #f07;
+  background-color: rgba(255, 0, 119, 0.2);
+}
+#container.darkContainer main section #tabSongs #listAllSongs .allSongsItemPlaying:hover {
+  background-color: rgba(255, 0, 119, 0.28);
+}
+#container.darkContainer main section #tabSongs #listAllSongs .songsItemSelected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#container.darkContainer main section #tabPlaylists #playlistTop h2 {
+  color: #fff;
+}
+#container.darkContainer main section #tabPlaylists #playlistTop #playlistTopLeft {
+  color: #ddd;
+}
+#container.darkContainer main section #tabPlaylists #playlistTop #playlistTopRight .searchBoxContainer .inputBox input {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #tabPlaylists #playlistTop #playlistTopRight .searchBoxContainer .inputBox input::placeholder {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabPlaylists #playlistTop #playlistTopRight .btn {
+  background-color: #0d1117;
+  border: 1px solid #0d1117;
+}
+#container.darkContainer main section #tabPlaylists #playlistTop #playlistTopRight .btn:hover {
+  border: 1px solid #555;
+}
+#container.darkContainer main section #tabPlaylists #songsTopFields {
+  border-top: 1px solid #383838;
+  border-bottom: 1px solid #383838;
+}
+#container.darkContainer main section #tabPlaylists #songsTopFields .songsRow {
+  color: #eee;
+}
+#container.darkContainer main section #tabPlaylists #listAllPlaylistSongs .allSongsItem {
+  color: #eee;
+}
+#container.darkContainer main section #tabPlaylists #listAllPlaylistSongs .allSongsItem:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+#container.darkContainer main section #tabPlaylists #listAllPlaylistSongs .allSongsItemPlaying {
+  color: #f07;
+  background-color: rgba(255, 0, 119, 0.2);
+}
+#container.darkContainer main section #tabPlaylists #listAllPlaylistSongs .allSongsItemPlaying:hover {
+  background-color: rgba(255, 0, 119, 0.28);
+}
+#container.darkContainer main section #tabSettings #settingsLastUpdated {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+#container.darkContainer main section #tabSettings #settingsLastUpdated p {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer #settingsFileLocationSubmit {
+  border: 2px solid #f07;
+}
+#container.darkContainer main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer #settingsCoverLocationSubmit {
+  border: 2px solid #f07;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem {
+  border-bottom: 1px solid #333;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemTop {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsSpaceCenter #settingsSpaceSize #settingsSpaceBar {
+  background-color: #333;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions #downloadData {
+  border: 2px solid #f07;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions #downloadData:hover {
+  background-color: #f07;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsDownloadOptions #lastDownload {
+  color: #ccc;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreData, #container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreConfirm {
+  border: 2px solid #f07;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreData:hover, #container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreConfirm:hover {
+  background-color: #f07;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsRestoreOptions #restoreInfo {
+  color: #ccc;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsAvoidedList #settingsAvoidedTop {
+  border-top: 1px solid #555;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsAvoidedList #settingsAvoidedTop:hover {
+  background-color: transparent;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsAvoidedList .settingsAvoidedSong {
+  border-bottom: 1px solid #555;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsAvoidedList .settingsAvoidedSong:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongUnAvoid svg {
+  fill: #ddd;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody #settingsAvoidedList .settingsAvoidedSong .settingsAvoidedSongUnAvoid svg:hover {
+  fill: #f00;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox {
+  position: relative;
+  width: 250px;
+  margin: 20px 20px 12px;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect {
+  width: 100%;
+  height: 40px;
+  font-size: 13pt;
+  padding: 0px 14px;
+  outline: 0;
+  border: 0px;
+  color: #fff;
+  background-color: #090b10;
+  border-bottom: 0px solid #f07;
+  box-sizing: border-box;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:hover, #container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:focus {
+  color: #f07;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:hover ~ .selectShadow, #container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .settingsSelect:focus ~ .selectShadow {
+  width: 100%;
+}
+#container.darkContainer main section #tabSettings #settingsContent .settingsItem .settingsItemBody .selectBox .selectShadow {
+  width: 0px;
+  height: 1px;
+  border-bottom: 2px solid #f07;
+  transition: width 0.2s;
+}
+#container.darkContainer main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer .inputBox #settingsFileLocationUrl {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #tabSettings #settingsContent #settingsFileLocation #settingsFileLocationContainer .inputBox #settingsFileLocationUrl::placeholder {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer .inputBox #settingsCoverLocationUrl {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #tabSettings #settingsContent #settingsFileLocation #settingsCoverLocationContainer .inputBox #settingsCoverLocationUrl::placeholder {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #addSongContent .addSongItem {
+  color: #eee;
+  border-bottom: 1px solid #333;
+}
+#container.darkContainer main section #addSongContent .addSongItem .inputBox input {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #addSongContent .addSongItem .inputBox input::placeholder {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #addSongContent .addSongItem .addSongRequired {
+  color: #dd1d1d;
+  background-color: transparent;
+}
+#container.darkContainer main section #addSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton {
+  background-color: #0d1117;
+}
+#container.darkContainer main section #addSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton {
+  background-color: #0d1117;
+}
+#container.darkContainer main section #editSongContent .addSongItem {
+  color: #eee;
+  border-bottom: 1px solid #333;
+}
+#container.darkContainer main section #editSongContent .addSongItem .inputBox input {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#container.darkContainer main section #editSongContent .addSongItem .inputBox input::placeholder {
+  color: #f4f4f4;
+}
+#container.darkContainer main section #editSongContent .addSongItem .addSongRequired {
+  color: #dd1d1d;
+  background-color: transparent;
+}
+#container.darkContainer main section #editSongContent .addSongItem #addSongImageSelector #addSongImageSelectorButton {
+  background-color: #0d1117;
+}
+#container.darkContainer main section #editSongContent .addSongItem #addSongUrlSelector #addSongUrlSelectorButton {
+  background-color: #0d1117;
+}
+#container.darkContainer footer {
+  background-color: #090b10;
+}
+#container.darkContainer footer #footerMain {
+  background-color: rgba(255, 0, 119, 0.7);
+}
+
+#dialogs.darkDialogs {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#dialogs.darkDialogs .dialog {
+  background-color: #0d1117;
+}
+#dialogs.darkDialogs .dialog .dialogTop h2 {
+  color: #fff;
+}
+#dialogs.darkDialogs .dialog .dialogTop .dialogClose {
+  fill: #999;
+}
+#dialogs.darkDialogs .dialog .dialogTop .dialogClose:hover {
+  fill: #eee;
+}
+#dialogs.darkDialogs .dialog .dialogContent #dialogOptions .dialogOpt {
+  background-color: #0d1117;
+  border: 2px solid #f07;
+}
+#dialogs.darkDialogs .dialog .dialogContent #dialogOptions .dialogOpt:hover {
+  background-color: #f07;
+}
+#dialogs.darkDialogs .dialog .dialogContent #dialogOptions .dialogOptCancel {
+  color: #bbb;
+  border: 2px solid #bbb;
+}
+#dialogs.darkDialogs .dialog .dialogContent #dialogOptions .dialogOptCancel:hover {
+  background-color: #555;
+}
+#dialogs.darkDialogs #dialogCreatePlaylist .dialogNewPlaylistText {
+  color: #ddd;
+}
+#dialogs.darkDialogs #dialogCreatePlaylist .inputBox input[type=text] {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#dialogs.darkDialogs #dialogCreatePlaylist .inputBox input[type=text]:placeholder {
+  color: #f4f4f4;
+}
+#dialogs.darkDialogs #dialogDeleteSong .dialogDeleteSongText {
+  color: #ddd;
+}
+#dialogs.darkDialogs #dialogRenamePlaylist .dialogRenamePlaylistText {
+  color: #ddd;
+}
+#dialogs.darkDialogs #dialogRenamePlaylist .inputBox input[type=text] {
+  color: #f4f4f4;
+  background-color: #0d1117;
+}
+#dialogs.darkDialogs #dialogRenamePlaylist .inputBox input[type=text]:placeholder {
+  color: #f4f4f4;
+}
+#dialogs.darkDialogs #dialogDeletePlaylist .dialogDeletePlaylistText {
+  color: #ddd;
+}
+
+@keyframes loadScreenPrimary {
+  30% {
+    stroke-dashoffset: 405;
+  }
+  100% {
+    /*stroke-dasharray: 0*/
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes loadScreenSecondary {
+  100% {
+    stroke: rgba(255, 0, 119, 0.55);
+  }
+}
+@keyframes loadScreenTexth1 {
+  20% {
+    color: #f07;
+  }
+  40% {
+    color: #888;
+  }
+  60% {
+    color: #f07;
+  }
+  100% {
+    color: #f07;
+  }
+}
+@keyframes loadScreenTexth2 {
+  40% {
+    color: #888;
+  }
+  100% {
+    color: rgba(255, 0, 119, 0.8);
+  }
+}
+@keyframes loadScreenShowError {
+  100% {
+    visibility: visible;
+  }
+}
+/* ---------------- media queries ---------------- */
+@media screen and (min-width: 1650px) {
+  #container main section #tabSongs #songsRowTitle, #container main section #tabPlaylists #songsRowTitle {
+    width: 300px;
+  }
+
+  #container main section #tabSongs #songsRowAlbum, #container main section #tabPlaylists #songsRowAlbum {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  #container main section #tabSongs #songsRowGenre, #container main section #tabPlaylists #songsRowGenre {
+    display: none;
+  }
+}
+@media screen and (max-width: 1050px) {
+  #container main section #tabSongs #songsRowAddedIn, #container main section #tabPlaylists #songsRowAddedIn {
+    display: none;
+  }
+
+  #container main aside {
+    display: none;
+  }
+
+  #container #headerResponsive {
+    display: flex;
+  }
+
+  #container main {
+    padding-top: 64px;
+  }
+}
+@media screen and (max-width: 850px) {
+  #container main section #tabSongs #songsRowAlbum, #container main section #tabPlaylists #songsRowAlbum {
+    display: none;
+  }
+
+  #container main section #tabSongs #songsTop {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 780px) {
+  #headerResponsive #headerResponsiveIdent {
+    width: 210px;
+  }
+}
+@media screen and (max-width: 720px) {
+  #headerResponsive #headerResponsiveIdent {
+    width: 100px;
+  }
+
+  #headerResponsive #headerResponsiveIdent #headerResponsiveLogoText {
+    display: none;
+  }
+}
+@media screen and (max-width: 620px) {
+  #headerResponsive #headerResponsiveNav .headerRespNavOpt p {
+    font-size: 12pt;
+  }
+
+  #container main section #tabSongs #songsTop #songsTopRight .searchBoxContainer {
+    display: none;
+  }
+}
+@media screen and (max-width: 540px) {
+  #headerResponsive #headerResponsiveIdent {
+    width: 65px;
+  }
+
+  #headerResponsive #headerResponsiveIdent .responsiveAppLogo {
+    margin-top: 4px;
+    margin-left: 5px;
+  }
+
+  #headerResponsive #headerResponsiveIdent .responsiveAppLogo svg {
+    width: 54px;
+    height: 54px;
+  }
+
+  #headerResponsive #headerResponsiveNav .headerRespNavOpt {
+    padding: 0px 4px;
+  }
+
+  #headerResponsive #headerResponsiveNav .headerRespNavOpt p {
+    font-size: 11pt;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

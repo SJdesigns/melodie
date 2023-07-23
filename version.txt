@@ -1,0 +1,3 @@
+App:		melodie
+Version:	v1.1
+Release:	22/07/2023

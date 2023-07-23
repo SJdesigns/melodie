@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>mélodie</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.svg">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/lang.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<div id="loadScreen">
+		<svg id="loadScreenAuthor" xmlns="http://www.w3.org/2000/svg" width="1894.81" height="427.58" viewBox="0 0 1894.81 427.58"><title>sjdesigns</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path d="M0,291.31l29.48-34.6c24.91,23.38,58,38.82,93.57,38.82,41.46,0,64.47-19.07,64.47-45.43,0-32-23.91-40.89-56.35-54.61L85,175.23c-33.43-13.18-70.12-37.4-70.12-85.62C14.85,38.59,60.78,0,125.43,0,166,0,202.89,16,228.29,41.06l-25.92,32c-21.87-18.35-45.66-29.19-79.1-29.19-34.45,0-57.62,15.94-57.62,42.74,0,28.42,28.26,38.8,57.1,50l44.42,19.57c41.06,16,71.75,39.93,71.75,87.78,0,52.56-44.37,95.46-118.61,95.46C73.33,339.44,30.81,321.19,0,291.31Z" style="fill:#1b1464"/><path d="M305.93,285.13l30.61-30.73c18.91,27.51,43.88,41.13,68.35,41.13,43.05,0,63-21.16,63-72.74V47.91H333.43V5.59H518.54V227c0,61.74-28.53,112.49-112.27,112.49C369.86,339.44,330.33,323.19,305.93,285.13Z" style="fill:#1b1464"/><path d="M771.76,333.44h-32v-34H739q-22.26,38.67-68.75,38.67-37.69,0-60.25-26.86t-22.56-73.14q0-49.6,25-79.49T679,128.75q41.21,0,60,32.42h.78V37.35h32Zm-32-90.43V213.52q0-24.22-16-41t-40.63-16.79q-29.3,0-46.09,21.48t-16.8,59.37q0,34.57,16.11,54.59t43.27,20q26.74,0,43.45-19.33T739.73,243Z" style="fill:#2e3192"/><path d="M997.35,241.45H856.14q.78,33.39,18,51.56t47.26,18.16q33.79,0,62.11-22.26V319q-26.37,19.14-69.73,19.14-42.37,0-66.6-27.25t-24.22-76.66q0-46.68,26.47-76.07t65.72-29.4q39.25,0,60.74,25.39t21.49,70.51ZM964.54,214.3q-.19-27.74-13.38-43.16t-36.62-15.43a51.73,51.73,0,0,0-38.48,16.21q-15.82,16.22-19.53,42.38Z" style="fill:#2e3192"/><path d="M1033.68,326.21V291.84q26.16,19.34,57.61,19.33,42.2,0,42.19-28.12a24.37,24.37,0,0,0-3.61-13.57,36,36,0,0,0-9.77-9.87,75.53,75.53,0,0,0-14.45-7.71q-8.31-3.42-17.87-7.13a227.9,227.9,0,0,1-23.34-10.65,70.17,70.17,0,0,1-16.8-12.11,44.91,44.91,0,0,1-10.15-15.33,54.2,54.2,0,0,1-3.42-20.12,47.86,47.86,0,0,1,6.44-24.9,57.24,57.24,0,0,1,17.19-18.16,80.34,80.34,0,0,1,24.51-11,108.89,108.89,0,0,1,28.42-3.71q26,0,46.48,9v32.42q-22.06-14.46-50.78-14.45a59.25,59.25,0,0,0-16.21,2,39.57,39.57,0,0,0-12.4,5.76,26.69,26.69,0,0,0-8,8.88,23.45,23.45,0,0,0-2.83,11.43,27.4,27.4,0,0,0,2.83,13.09,28.89,28.89,0,0,0,8.3,9.37,63.09,63.09,0,0,0,13.28,7.42q7.82,3.33,17.78,7.23a250.16,250.16,0,0,1,23.83,10.45,81.79,81.79,0,0,1,18,12.11A47.29,47.29,0,0,1,1162.29,259q4,8.79,4,20.89,0,14.85-6.54,25.79a56.1,56.1,0,0,1-17.48,18.16,79.93,79.93,0,0,1-25.19,10.74,124.16,124.16,0,0,1-29.89,3.52Q1056.33,338.13,1033.68,326.21Z" style="fill:#2e3192"/><path d="M1231.92,82.66a20.27,20.27,0,0,1-14.65-5.86,19.76,19.76,0,0,1-6-14.84,20.49,20.49,0,0,1,20.7-20.9A20.68,20.68,0,0,1,1246.86,47,20,20,0,0,1,1253,62a19.77,19.77,0,0,1-6.15,14.64A20.49,20.49,0,0,1,1231.92,82.66Zm15.62,250.78h-32v-200h32Z" style="fill:#2e3192"/><path d="M1483.09,317.42q0,110.16-105.47,110.16-37.11,0-64.84-14.06v-32q33.78,18.75,64.45,18.75,73.83,0,73.83-78.52V299.85h-.78q-22.86,38.28-68.75,38.28-37.3,0-60.06-26.66t-22.75-71.58q0-51,24.51-81.06t67.09-30.08q40.42,0,60,32.42h.78V133.44h32Zm-32-74.41V213.52q0-23.84-16.11-40.82t-40.14-17q-29.68,0-46.48,21.58t-16.8,60.45q0,33.39,16.11,53.41t42.68,20q27,0,43.85-19.14T1451.06,243Z" style="fill:#2e3192"/><path d="M1714,333.44h-32V219.38q0-63.67-46.49-63.67-24,0-39.74,18.06T1580,219.38V333.44h-32v-200h32v33.2h.78q22.65-37.89,65.62-37.89,32.82,0,50.2,21.19T1714,211.17Z" style="fill:#2e3192"/><path d="M1762.19,326.21V291.84q26.18,19.34,57.62,19.33,42.18,0,42.19-28.12a24.38,24.38,0,0,0-3.62-13.57,36,36,0,0,0-9.76-9.87,75.53,75.53,0,0,0-14.45-7.71q-8.31-3.42-17.88-7.13A229.9,229.9,0,0,1,1793,234.12,70.3,70.3,0,0,1,1776.16,222,45.08,45.08,0,0,1,1766,206.68a54.2,54.2,0,0,1-3.42-20.12,47.77,47.77,0,0,1,6.45-24.9,57.13,57.13,0,0,1,17.19-18.16,80.34,80.34,0,0,1,24.51-11,108.89,108.89,0,0,1,28.42-3.71q26,0,46.48,9v32.42q-22.08-14.46-50.78-14.45a59.2,59.2,0,0,0-16.21,2,39.46,39.46,0,0,0-12.4,5.76,26.48,26.48,0,0,0-8,8.88,23.45,23.45,0,0,0-2.83,11.43,27.4,27.4,0,0,0,2.83,13.09,28.66,28.66,0,0,0,8.3,9.37,62.84,62.84,0,0,0,13.28,7.42q7.82,3.33,17.77,7.23a247.94,247.94,0,0,1,23.83,10.45,81.87,81.87,0,0,1,18,12.11A47.29,47.29,0,0,1,1890.81,259q4,8.79,4,20.89,0,14.85-6.54,25.79a56.2,56.2,0,0,1-17.48,18.16,80.08,80.08,0,0,1-25.2,10.74,124.13,124.13,0,0,1-29.88,3.52Q1784.84,338.13,1762.19,326.21Z" style="fill:#2e3192"/></g></g></svg>
+		<div id="loadScreenCenter">
+			<div id="loadScreenIdent">
+				<svg id="loadScreenLogo" id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="234" height="170" viewBox="0 0 234 170"><title>logotipo</title><path id="loadLogoSecondary" d="M33,80c39,0,39,140,78,140S150,80,189,80s39,140,78,140" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10"/><path id="loadLogoMain" d="M33.05,99.54c38.91,0,38.91,100,77.83,100s38.92-100,77.83-100,38.92,100,77.84,100" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/></svg>
+				<div>
+					<h1>mélodie</h1>
+					<h3>player</h3>
+				</div>
+			</div>
+			<p id="loadScreenError">Se ha producido un error inesperado en la aplicación</p>
+		</div>
+	</div>
+	<div id="startup">
+		<div id="startupCenter">
+			<div id="startupIdentity">
+				<div>
+					<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="234" height="170" viewBox="0 0 234 170"><title>logotipo</title><path id="startupLogoSecondary" d="M33,80c39,0,39,140,78,140S150,80,189,80s39,140,78,140" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/><path id="startupLogoMain" d="M33.05,99.54c38.91,0,38.91,100,77.83,100s38.92-100,77.83-100,38.92,100,77.84,100" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/></svg>
+				</div>
+				<div>
+					<h1>mélodie</h1>
+					<h3>player</h3>
+				</div>
+			</div>
+			<p id="startupWelcome">Bienvenido a mélodie</p>
+			<p id="startupIntroduction">Para configurar la aplicación debes indicar la ubicación dónde se almacenarán los archivos de audio y las carátulas de los discos.</p>
+			<div id="startupTextboxes">
+				<div class="startupTextbox" id="startupTxtAudio">
+					<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="23.7" height="36" viewBox="0 0 23.7 36"><title>musicNote</title><path d="M19.65,42a7.54,7.54,0,0,1-5.33-12.83A7.3,7.3,0,0,1,19.65,27a7.4,7.4,0,0,1,2.52.4,6.57,6.57,0,0,1,2,1.1V6h11.7v6.75h-8.7V34.5a7.43,7.43,0,0,1-7.5,7.5Z" transform="translate(-12.15 -6)"/></svg>
+					<input id="startUrlAudio" type="text" placeholder="ruta de los archivos de audio" />
+					<div class="inputOuterShadow">
+						<div class="inputShadow"></div>
+					</div>
+				</div>
+				<div class="startupTextbox" id="startupTxtCover">
+					<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><title>picture</title><path d="M9,42a2.88,2.88,0,0,1-2.1-.9A2.88,2.88,0,0,1,6,39V9a2.88,2.88,0,0,1,.9-2.1A2.88,2.88,0,0,1,9,6H39a2.88,2.88,0,0,1,2.1.9A2.88,2.88,0,0,1,42,9V39a3.08,3.08,0,0,1-3,3Zm0-3H39V9H9Zm2.8-4.85H36.25l-7.35-9.8L22.3,32.9l-4.65-6.35ZM9,39v0Zm8-19.5a2.41,2.41,0,0,0,1.77-.73A2.44,2.44,0,0,0,19.5,17a2.41,2.41,0,0,0-.73-1.77A2.44,2.44,0,0,0,17,14.5a2.37,2.37,0,0,0-1.76.73A2.41,2.41,0,0,0,14.5,17a2.37,2.37,0,0,0,.73,1.76A2.41,2.41,0,0,0,17,19.5Z" transform="translate(-6 -6)"/></svg>
+					<input id="startUrlCover" type="text" placeholder="ruta que contiene las carátulas de los discos" />
+					<div class="inputOuterShadow">
+						<div class="inputShadow"></div>
+					</div>
+				</div>
+			</div>
+			<div id="startupButtons">
+				<div id="startupButtonClear"><p>Borrar</p></div>
+				<div id="startupButtonContinue"><p>Continuar</p></div>
+			</div>
+			<hr />
+			<div id="startupBackup">
+				<p id="startBackupExplanation">o<br />Importa una copia de seguridad de mélodie</p>
+				<input id="startupUploadDataFile" type="file" style="display:none" />
+				<div id="startupBackupButton">
+					<p>Restaurar copia</p>
+				</div>
+			</div>
+		</div>
+		<div id="startupLinks">
+			<a href=""><p>Manual de usuario</p></a>
+		</div>
+		<div id="startupLang">
+			<select id="startupLangSelector">
+			</select>
+		</div>
+	</div>
+	<div id="errorReporting">
+	</div>
+	<div id="dialogs">
+		<div class="dialog" id="dialogDeleteSong">
+			<div class="dialogTop">
+				<h2>Eliminar canción</h2>
+				<svg class="dialogClose" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="27.3" height="27.3" viewBox="0 0 27.3 27.3"><title>close</title><path d="M12.45,37.65l-2.1-2.1L21.9,24,10.35,12.45l2.1-2.1L24,21.9,35.55,10.35l2.1,2.1L26.1,24,37.65,35.55l-2.1,2.1L24,26.1Z" transform="translate(-10.35 -10.35)"/></svg>
+			</div>
+			<div class="dialogContent">
+				<p class="dialogDeleteSongText">Está seguro de que desea eliminar la canción <i id="dialogDeleteSongName"></i> de forma permanente.</p>
+				<p class="dialogDeleteSongText" id="dialogDeleteSongPlaylist"></p>
+				<input id="dialogDeleteSongId" type="hidden" value="" />
+				<div id="dialogOptions">
+					<div class="dialogOpt dialogOptConfirm" id="dialogOptDeleteSongConfirm">
+						<p>Eliminar</p>
+					</div>
+					<div class="dialogOpt dialogOptCancel" id="dialogOptDeleteSongCancel">
+						<p>Cancelar</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dialog" id="dialogCreatePlaylist">
+			<div class="dialogTop">
+				<h2>Nueva playlist</h2>
+				<svg class="dialogClose" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="27.3" height="27.3" viewBox="0 0 27.3 27.3"><title>close</title><path d="M12.45,37.65l-2.1-2.1L21.9,24,10.35,12.45l2.1-2.1L24,21.9,35.55,10.35l2.1,2.1L26.1,24,37.65,35.55l-2.1,2.1L24,26.1Z" transform="translate(-10.35 -10.35)"/></svg>
+			</div>
+			<div class="dialogContent">
+				<p class="dialogNewPlaylistText">Elije el nombre para la nueva playlist</p>
+				<p class="dialogNewPlaylistText" id="dialogNewPlaylistSong"></p>
+				<input id="dialogNewPlSongId" type="hidden" value="" />
+				<div id="dialogOptions">
+					<div class="inputBox">
+						<input id="dialogNewPlaylistName" type="text"  max-length="40" placeholder="escribe aquí el título" />
+						<div class="inputBoxShadow"></div>
+					</div>
+					<div class="dialogOpt dialogOptConfirm" id="dialogNewPlaylistCreate">
+						<p>Crear</p>
+					</div>
+					<div class="dialogOpt dialogOptCancel" id="dialogNewPlaylistCancel">
+						<p>Cancelar</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dialog" id="dialogRenamePlaylist">
+			<div class="dialogTop">
+				<h2>Renombrar playlist</h2>
+				<svg class="dialogClose" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="27.3" height="27.3" viewBox="0 0 27.3 27.3"><title>close</title><path d="M12.45,37.65l-2.1-2.1L21.9,24,10.35,12.45l2.1-2.1L24,21.9,35.55,10.35l2.1,2.1L26.1,24,37.65,35.55l-2.1,2.1L24,26.1Z" transform="translate(-10.35 -10.35)"/></svg>
+			</div>
+			<div class="dialogContent">
+				<p class="dialogRenamePlaylistText">Elije un nuevo nombre para la playlist <i id="dialogRenamePlaylistName"></i></p>
+				<p class="dialogNewPlaylistText" id="dialogNewPlaylistSong"></p>
+				<input id="dialogRenamePlaylistId" type="hidden" value="" />
+				<div id="dialogOptions">
+					<div class="inputBox">
+						<input id="dialogRenamePlaylistNewName" type="text"  max-length="40" placeholder="escribe aquí el nuevo nombre" />
+						<div class="inputBoxShadow"></div>
+					</div>
+					<div class="dialogOpt dialogOptConfirm" id="dialogRenamePlaylistRename">
+						<p>Renombrar</p>
+					</div>
+					<div class="dialogOpt dialogOptCancel" id="dialogRenamePlaylistCancel">
+						<p>Cancelar</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dialog" id="dialogDeletePlaylist">
+			<div class="dialogTop">
+				<h2>Eliminar playlist</h2>
+				<svg class="dialogClose" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="27.3" height="27.3" viewBox="0 0 27.3 27.3"><title>close</title><path d="M12.45,37.65l-2.1-2.1L21.9,24,10.35,12.45l2.1-2.1L24,21.9,35.55,10.35l2.1,2.1L26.1,24,37.65,35.55l-2.1,2.1L24,26.1Z" transform="translate(-10.35 -10.35)"/></svg>
+			</div>
+			<div class="dialogContent">
+				<p class="dialogDeletePlaylistText">Está seguro de que desea eliminar la playlist <i id="dialogDeletePlaylistName"></i> de forma permanente.</p>
+				<p class="dialogDeleteSongText" id="dialogDeletePlaylist"></p>
+				<input id="dialogDeletePlaylistId" type="hidden" value="" />
+				<div id="dialogOptions">
+					<div class="dialogOpt dialogOptConfirm" id="dialogOptDeletePlaylistConfirm">
+						<p>Eliminar</p>
+					</div>
+					<div class="dialogOpt dialogOptCancel" id="dialogOptDeletePlaylistCancel">
+						<p>Cancelar</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="headerResponsive">
+			<div id="headerResponsiveIdent">
+				<div class="responsiveAppLogo">
+					<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="234" height="170" viewBox="0 0 234 170"><title>logotipo</title><path id="responsiveLogoSecondary" d="M33,80c39,0,39,140,78,140S150,80,189,80s39,140,78,140" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/><path id="responsiveLogoMain" d="M33.05,99.54c38.91,0,38.91,100,77.83,100s38.92-100,77.83-100,38.92,100,77.84,100" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/></svg>
+				</div>
+				<div id="headerResponsiveLogoText">
+					<h1>mélodie</h1>
+					<h3>player</h3>
+				</div>
+			</div>
+			<div id="headerResponsiveNav">
+				<div class="headerRespNavOpt" id="headerRespNavOptHome">
+					<svg class="headerRespNavOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="40" height="34" viewBox="0 0 40 34"><title>home</title><path d="M10,40V24H4L24,6l10,8.85V9h4v9.55L44,24H38V40H26.5V28h-5V40Zm3-3h5.5V25h11V37H35V20L24,10,13,20Zm5.5-12h0Zm1.25-5.5h8.5A3.45,3.45,0,0,0,27,16.77a4.68,4.68,0,0,0-6,0A3.45,3.45,0,0,0,19.75,19.5Z" transform="translate(-4 -6)"/></svg>
+					<p>home</p>
+				</div>
+				<div class="headerRespNavOpt" id="headerRespNavOptSongs">
+					<svg class="headerRespNavOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="36" height="30" viewBox="0 0 36 30"><title>list</title><path d="M8.55,39a2.51,2.51,0,0,1-1.8-.72A2.33,2.33,0,0,1,6,36.55,2.56,2.56,0,0,1,8.55,34a2.33,2.33,0,0,1,1.73.75,2.51,2.51,0,0,1,.72,1.8A2.48,2.48,0,0,1,8.55,39ZM16,38V35H42v3ZM8.55,26.5a2.48,2.48,0,0,1-1.8-.73,2.46,2.46,0,0,1,0-3.54,2.48,2.48,0,0,1,1.8-.73,2.33,2.33,0,0,1,1.73.75A2.44,2.44,0,0,1,11,24a2.41,2.41,0,0,1-.73,1.75A2.3,2.3,0,0,1,8.55,26.5Zm7.45-1v-3H42v3ZM8.5,14A2.48,2.48,0,0,1,6,11.5,2.48,2.48,0,0,1,8.5,9,2.49,2.49,0,0,1,11,11.5,2.49,2.49,0,0,1,8.5,14ZM16,13V10H42v3Z" transform="translate(-6 -9)"/></svg>
+						<p>mis canciones</p>
+				</div>
+				<div class="headerRespNavOpt" id="headerRespNavOptPlaylists">
+					<svg class="headerRespNavOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="38" height="28" viewBox="0 0 38 28"><title>playlist</title><path d="M32,40a5.89,5.89,0,0,1-4.2-1.67,5.43,5.43,0,0,1-1.75-4.08A5.7,5.7,0,0,1,31.8,28.5a8.37,8.37,0,0,1,1.58.15,6.76,6.76,0,0,1,1.52.5V12H44v3.55H37.9V34.3a5.42,5.42,0,0,1-1.72,4A5.81,5.81,0,0,1,32,40ZM6,31.5v-3H21.3v3Zm0-8.25v-3H29.65v3ZM6,15V12H29.65v3Z" transform="translate(-6 -12)"/></svg>
+						<p>mis playlists</p>
+				</div>
+				<div class="headerRespNavOpt" id="headerRespNavOptSettings">
+						<svg class="headerRespNavOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><title>configuración</title><path d="M19.4,44l-1-6.3a13.22,13.22,0,0,1-2-1,13.84,13.84,0,0,1-1.85-1.25l-5.9,2.7L4,30l5.4-3.95a5.89,5.89,0,0,1-.13-1c0-.38,0-.72,0-1s0-.64,0-1a5.89,5.89,0,0,1,.13-1L4,18,8.65,9.8l5.9,2.7a13.84,13.84,0,0,1,1.85-1.25,10.44,10.44,0,0,1,2-.9L19.4,4h9.2l1,6.3a14.72,14.72,0,0,1,2,.93,8.32,8.32,0,0,1,1.83,1.27l5.9-2.7L44,18l-5.4,3.85a5.94,5.94,0,0,1,.12,1.08c0,.38,0,.74,0,1.07s0,.68,0,1.05a5.81,5.81,0,0,1-.12,1.05L44,30l-4.65,8.2-5.9-2.7a16.63,16.63,0,0,1-1.83,1.28,8.81,8.81,0,0,1-2,.92l-1,6.3ZM24,30.5A6.49,6.49,0,0,0,30.5,24,6.49,6.49,0,0,0,24,17.5,6.49,6.49,0,0,0,17.5,24,6.49,6.49,0,0,0,24,30.5Zm0-3a3.48,3.48,0,1,1,2.48-1A3.4,3.4,0,0,1,24,27.5ZM21.8,41h4.4l.7-5.6A11.71,11.71,0,0,0,30,34.15a12.79,12.79,0,0,0,2.68-2L38,34.4l2-3.6-4.7-3.45q.2-.86.33-1.68A11.52,11.52,0,0,0,35.75,24a13.3,13.3,0,0,0-.1-1.68,10.36,10.36,0,0,0-.35-1.67L40,17.2l-2-3.6-5.3,2.3a11,11,0,0,0-2.6-2.17,8.38,8.38,0,0,0-3.2-1.13L26.2,7H21.8l-.7,5.6a10.39,10.39,0,0,0-3.17,1.2,11.15,11.15,0,0,0-2.63,2.1L10,13.6,8,17.2l4.7,3.45c-.13.57-.24,1.13-.32,1.68a10.79,10.79,0,0,0,0,3.34c.08.56.19,1.11.32,1.68L8,30.8l2,3.6,5.3-2.3a12.79,12.79,0,0,0,2.68,2A11.71,11.71,0,0,0,21.1,35.4Z" transform="translate(-4 -4)"/></svg>
+						<p>Configuración</p>
+					</div>
+			</div>
+		</div>
+		<main>
+			<aside>
+				<header>
+					<div id="headerCenter">
+						<div>
+							<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="234" height="170" viewBox="0 0 234 170"><title>logotipo</title><path id="headerLogoSecondary" d="M33,80c39,0,39,140,78,140S150,80,189,80s39,140,78,140" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/><path id="headerLogoMain" d="M33.05,99.54c38.91,0,38.91,100,77.83,100s38.92-100,77.83-100,38.92,100,77.84,100" transform="translate(-33 -65)" style="fill:none;stroke-miterlimit:10;stroke-width:30px"/></svg>
+						</div>
+						<div>
+							<h1>mélodie</h1>
+							<h3>player</h3>
+						</div>
+					</div>
+				</header>
+				<nav>
+					<div id="navOptHome" class="navOpt">
+						<svg class="navOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="40" height="34" viewBox="0 0 40 34"><title>home</title><path d="M10,40V24H4L24,6l10,8.85V9h4v9.55L44,24H38V40H26.5V28h-5V40Zm3-3h5.5V25h11V37H35V20L24,10,13,20Zm5.5-12h0Zm1.25-5.5h8.5A3.45,3.45,0,0,0,27,16.77a4.68,4.68,0,0,0-6,0A3.45,3.45,0,0,0,19.75,19.5Z" transform="translate(-4 -6)"/></svg>
+						<p>home</p>
+						<svg class="navOptPlaying" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="23.7" height="36" viewBox="0 0 23.7 36"><title>reproduciendo</title><path d="M19.65,42a7.54,7.54,0,0,1-5.33-12.83A7.3,7.3,0,0,1,19.65,27a7.4,7.4,0,0,1,2.52.4,6.57,6.57,0,0,1,2,1.1V6h11.7v6.75h-8.7V34.5a7.43,7.43,0,0,1-7.5,7.5Z" transform="translate(-12.15 -6)"/></svg>
+					</div>
+					<div id="navOptSongs" class="navOpt">
+						<svg class="navOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="36" height="30" viewBox="0 0 36 30"><title>list</title><path d="M8.55,39a2.51,2.51,0,0,1-1.8-.72A2.33,2.33,0,0,1,6,36.55,2.56,2.56,0,0,1,8.55,34a2.33,2.33,0,0,1,1.73.75,2.51,2.51,0,0,1,.72,1.8A2.48,2.48,0,0,1,8.55,39ZM16,38V35H42v3ZM8.55,26.5a2.48,2.48,0,0,1-1.8-.73,2.46,2.46,0,0,1,0-3.54,2.48,2.48,0,0,1,1.8-.73,2.33,2.33,0,0,1,1.73.75A2.44,2.44,0,0,1,11,24a2.41,2.41,0,0,1-.73,1.75A2.3,2.3,0,0,1,8.55,26.5Zm7.45-1v-3H42v3ZM8.5,14A2.48,2.48,0,0,1,6,11.5,2.48,2.48,0,0,1,8.5,9,2.49,2.49,0,0,1,11,11.5,2.49,2.49,0,0,1,8.5,14ZM16,13V10H42v3Z" transform="translate(-6 -9)"/></svg>
+						<p>mis canciones</p>
+						<svg class="navOptPlaying" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="23.7" height="36" viewBox="0 0 23.7 36"><title>reproduciendo</title><path d="M19.65,42a7.54,7.54,0,0,1-5.33-12.83A7.3,7.3,0,0,1,19.65,27a7.4,7.4,0,0,1,2.52.4,6.57,6.57,0,0,1,2,1.1V6h11.7v6.75h-8.7V34.5a7.43,7.43,0,0,1-7.5,7.5Z" transform="translate(-12.15 -6)"/></svg>
+					</div>
+					<div id="navOptPlaylists" class="navOpt">
+						<svg class="navOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="38" height="28" viewBox="0 0 38 28"><title>playlist</title><path d="M32,40a5.89,5.89,0,0,1-4.2-1.67,5.43,5.43,0,0,1-1.75-4.08A5.7,5.7,0,0,1,31.8,28.5a8.37,8.37,0,0,1,1.58.15,6.76,6.76,0,0,1,1.52.5V12H44v3.55H37.9V34.3a5.42,5.42,0,0,1-1.72,4A5.81,5.81,0,0,1,32,40ZM6,31.5v-3H21.3v3Zm0-8.25v-3H29.65v3ZM6,15V12H29.65v3Z" transform="translate(-6 -12)"/></svg>
+						<p>mis playlists</p>
+					</div>
+					<div id="navPlaylistList"></div>
+					<div id="navOptSettings" class="navOpt">
+						<svg class="navOptLogo" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><title>configuración</title><path d="M19.4,44l-1-6.3a13.22,13.22,0,0,1-2-1,13.84,13.84,0,0,1-1.85-1.25l-5.9,2.7L4,30l5.4-3.95a5.89,5.89,0,0,1-.13-1c0-.38,0-.72,0-1s0-.64,0-1a5.89,5.89,0,0,1,.13-1L4,18,8.65,9.8l5.9,2.7a13.84,13.84,0,0,1,1.85-1.25,10.44,10.44,0,0,1,2-.9L19.4,4h9.2l1,6.3a14.72,14.72,0,0,1,2,.93,8.32,8.32,0,0,1,1.83,1.27l5.9-2.7L44,18l-5.4,3.85a5.94,5.94,0,0,1,.12,1.08c0,.38,0,.74,0,1.07s0,.68,0,1.05a5.81,5.81,0,0,1-.12,1.05L44,30l-4.65,8.2-5.9-2.7a16.63,16.63,0,0,1-1.83,1.28,8.81,8.81,0,0,1-2,.92l-1,6.3ZM24,30.5A6.49,6.49,0,0,0,30.5,24,6.49,6.49,0,0,0,24,17.5,6.49,6.49,0,0,0,17.5,24,6.49,6.49,0,0,0,24,30.5Zm0-3a3.48,3.48,0,1,1,2.48-1A3.4,3.4,0,0,1,24,27.5ZM21.8,41h4.4l.7-5.6A11.71,11.71,0,0,0,30,34.15a12.79,12.79,0,0,0,2.68-2L38,34.4l2-3.6-4.7-3.45q.2-.86.33-1.68A11.52,11.52,0,0,0,35.75,24a13.3,13.3,0,0,0-.1-1.68,10.36,10.36,0,0,0-.35-1.67L40,17.2l-2-3.6-5.3,2.3a11,11,0,0,0-2.6-2.17,8.38,8.38,0,0,0-3.2-1.13L26.2,7H21.8l-.7,5.6a10.39,10.39,0,0,0-3.17,1.2,11.15,11.15,0,0,0-2.63,2.1L10,13.6,8,17.2l4.7,3.45c-.13.57-.24,1.13-.32,1.68a10.79,10.79,0,0,0,0,3.34c.08.56.19,1.11.32,1.68L8,30.8l2,3.6,5.3-2.3a12.79,12.79,0,0,0,2.68,2A11.71,11.71,0,0,0,21.1,35.4Z" transform="translate(-4 -4)"/></svg>
+						<p>Configuración</p>
+					</div>
+				</nav>
+			</aside>
+			<section>
+				<div id="tabHome" class="tab">
+					<div id="tabHomeAlerts">
+					</div>
+					<div id="tabHomeTitle">
+						<div id="tabHomeTitleLeft">
+							<h2>Bienvenido a mélodie</h2>
+							<p>¿Qué quieres escuchar hoy?</p>
+						</div>
+						<div id="tabHomeTitleRight">
+							<p>Llevas <span id="homeActiveTime"></span></p>
+							<p>escuchando música</p>
+						</div>
+					</div>
+					<div id="tabHomeFirstSteps">
+						<div id="homeFirstStepsTitle">
+							<h3>Primeros pasos</h3>
+							<svg id="homeFirstStepsClose" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="27.3" height="27.3" viewBox="0 0 27.3 27.3"><title>close</title><path d="M12.45,37.65l-2.1-2.1L21.9,24,10.35,12.45l2.1-2.1L24,21.9,35.55,10.35l2.1,2.1L26.1,24,37.65,35.55l-2.1,2.1L24,26.1Z" transform="translate(-10.35 -10.35)"/></svg>
+						</div>
+						<div class="homeFirstStepsItem" id="homeFirstStepSongs" onclick="showAddSongDialog()">
+							<div>
+								<svg class="homeFirstStepsIcon" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M22.5 38V25.5H10v-3h12.5V10h3v12.5H38v3H25.5V38Z"/></svg>
+								<p class="homeFirstStepsName">Añade todas tus canciones</p>
+								<p class="homeFirstStepsMore">encontrarás todas en la sección Mis Canciones</p>
+							</div>
+							<div>
+								<p class="homeFirstStepsCompleted" id="firstStepsCompSongs">
+									<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"/></svg>
+								</p>
+							</div>
+						</div>
+						<div class="homeFirstStepsItem" id="homeFirstStepPlaylists" onclick="addPlaylistConfirmation()">
+							<div>
+								<svg class="homeFirstStepsIcon" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M19.65 42q-3.15 0-5.325-2.175Q12.15 37.65 12.15 34.5q0-3.15 2.175-5.325Q16.5 27 19.65 27q1.4 0 2.525.4t1.975 1.1V6h11.7v6.75h-8.7V34.5q0 3.15-2.175 5.325Q22.8 42 19.65 42Z"/></svg>
+								<p class="homeFirstStepsName">Crea listas de reproducción</p>
+								<p class="homeFirstStepsMore">clasifica tus canciones como quieras</p>
+							</div>
+							<div>
+								<p class="homeFirstStepsCompleted" id="firstStepsCompPlaylists">
+									<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"/></svg>
+								</p>
+							</div>
+						</div>
+						<div class="homeFirstStepsItem" id="homeFirstStepBackup" onclick="showSettings()">
+							<div>
+								<svg class="homeFirstStepsIcon" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M12.5 40q-4.3 0-7.4-3.1Q2 33.8 2 29.5q0-3.9 2.475-6.875t6.375-3.575q1-4.85 4.7-7.925T24.1 8.05q5.65 0 9.475 4.075Q37.4 16.2 37.4 21.9v1.2q3.6-.1 6.1 2.325Q46 27.85 46 31.55q0 3.45-2.5 5.95T37.55 40H25.5q-1.2 0-2.1-.9-.9-.9-.9-2.1V24.1l-4.15 4.15-2.15-2.15 7.8-7.8 7.8 7.8-2.15 2.15-4.15-4.15V37h12.05q2.25 0 3.85-1.6t1.6-3.85q0-2.25-1.6-3.85t-3.85-1.6H34.4v-4.2q0-4.45-3.025-7.65t-7.475-3.2q-4.45 0-7.5 3.2t-3.05 7.65h-.95q-3.1 0-5.25 2.175T5 29.45q0 3.1 2.2 5.325T12.5 37h7v3ZM24 25.5Z"/></svg>
+								<p class="homeFirstStepsName">Guarda copias de seguridad</p>
+								<p class="homeFirstStepsMore">para evitar perder datos al borrar datos del navegador</p>
+							</div>
+							<div>
+								<p class="homeFirstStepsCompleted" id="firstStepsCompBackup">
+									<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M18.9 35.7 7.7 24.5l2.15-2.15 9.05 9.05 19.2-19.2 2.15 2.15Z"/></svg>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div id="tabHomeSuggested">
+						<div id="tabHomeSuggestedSection">
+							<div class="homeSuggestItemPreload"></div>
+							<div class="homeSuggestItemPreload"></div>
+							<div class="homeSuggestItemPreload"></div>
+							<div class="homeSuggestItemPreload"></div>
+							<div class="homeSuggestItemPreload"></div>
+							<div class="homeSuggestItemPreload"></div>
+						</div>
+						<p id="homeSuggestedMore" onclick="showSongs()">ver todas las canciones</p>
+					</div>
+					<div id="tabHomeStats">
+						<div class="homeStatsItem" id="homeStatsSongs">
+							<h4>Canciones</h4>
+							<p>0</p>
+						</div>
+						<div class="homeStatsItem" id="homeStatsPlayed">
+							<h4>Reproducciones</h4>
+							<p>0</p>
+						</div>
+						<div class="homeStatsItem" id="homeStatsArtists">
+							<h4>Artistas</h4>
+							<p>0</p>
+						</div>
+						<div class="homeStatsItem" id="homeStatsPlaylists">
+							<h4>Playlists</h4>
+							<p>0</p>
+						</div>
+					</div>
+					<div id="tabHomeNotPlayedSongs">
+						<h3>Hace tiempo que no escuchas</h3>
+						<div id="homeNotPlayedCenter">
+							<div class="homeNotPlayedItemPreload"></div>
+							<div class="homeNotPlayedItemPreload"></div>
+						</div>
+					</div>
+					<div id="tabHomeMostPlayed">
+						<h3>Canciones más escuchadas</h3>
+						<div id="homeMostPlayedList">
+						</div>
+						<p id="homeMostPlayedMore" onclick="">ver más</p>
+					</div>
+					<div id="tabHomeGenres">
+					</div>
+				</div>
+				<div id="tabSongs" class="tab">
+					<div id="songsTop">
+						<div id="songsTopLeft">
+							<div class="tabTopLeftTitle" id="mySongsList">
+								<h2>Lista de canciones</h2>
+								<svg class="tabTopLeftPlayingIcon" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="23.7" height="36" viewBox="0 0 23.7 36"><title>reproduciendo</title><path d="M19.65,42a7.54,7.54,0,0,1-5.33-12.83A7.3,7.3,0,0,1,19.65,27a7.4,7.4,0,0,1,2.52.4,6.57,6.57,0,0,1,2,1.1V6h11.7v6.75h-8.7V34.5a7.43,7.43,0,0,1-7.5,7.5Z" transform="translate(-12.15 -6)"></path></svg>
+							</div>
+							<p id="songsTopInfo"></p>
+						</div>
+						<div id="songsTopRight">
+							<div class="searchBoxContainer" id="searchBoxContAllSongs">
+								<form id="searchBoxForm">
+									<div class="inputBox">
+										<label for="searchBox"><svg class="inputBoxIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.6 21-6.3-6.3q-.75.6-1.725.95Q10.6 16 9.5 16q-2.725 0-4.612-1.887Q3 12.225 3 9.5q0-2.725 1.888-4.613Q6.775 3 9.5 3t4.613 1.887Q16 6.775 16 9.5q0 1.1-.35 2.075-.35.975-.95 1.725l6.3 6.3ZM9.5 14q1.875 0 3.188-1.312Q14 11.375 14 9.5q0-1.875-1.312-3.188Q11.375 5 9.5 5 7.625 5 6.312 6.312 5 7.625 5 9.5q0 1.875 1.312 3.188Q7.625 14 9.5 14Z"/></svg></label>
+										<input id="searchBox" type="text" value="" placeholder="buscar canción" spellcheck="false" autocomplete="off" />
+										<div class="inputBoxShadow"></div>
+										<label for="searchBox"><svg class="inputBoxClear" xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg></label>
+									</div>
+								</form>
+							</div>
+							<div class="btn miniBtn" id="btnAddSong">
+								<svg title="Añadir Canción" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M22.5 38V25.5H10v-3h12.5V10h3v12.5H38v3H25.5V38Z"/></svg>
+							</div>
+							<hr />
+							<div class="btn btnShuffle" id="btnShuffleAllSongs">
+								<svg title="Reproducir en Modo Aleatorio" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M29.05 40.5v-3h6.25l-9.2-9.15 2.1-2.15 9.3 9.2v-6.35h3V40.5Zm-19.45 0-2.1-2.15 27.9-27.9h-6.35v-3H40.5V18.9h-3v-6.3Zm10.15-18.7L7.5 9.6l2.15-2.15 12.25 12.2Z"/></svg>
+							</div>
+							<div class="btn btnPlay" id="btnPlayAllSongs">
+								<svg title="Reproducir" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M16 37.85v-28l22 14Zm3-14Zm0 8.55 13.45-8.55L19 15.3Z"/></svg>
+							</div>
+							<div class="btn btnPause" id="btnPauseAllSongs">
+								<svg title="Pausar" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M28.25 38V10H36v28ZM12 38V10h7.75v28Z"/></svg>
+							</div>
+							<div class="btn btnContinue" id="btnContinueAllSongs">
+								<svg title="Reproducir" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M16 37.85v-28l22 14Zm3-14Zm0 8.55 13.45-8.55L19 15.3Z"/></svg>
+							</div>
+						</div>
+					</div>
+					<div id="songsTopFields">
+						<div class="songsRow" id="songsRowOrder">
+							<p>#</p>
+						</div>
+						<div class="songsRow" id="songsRowImage">
+							<p></p>
+						</div>
+						<div class="songsRow" id="songsRowTitle">
+							<p>Título</p>
+						</div>
+						<div class="songsRow" id="songsRowArtist">
+							<p>Artista</p>
+						</div>
+						<div class="songsRow" id="songsRowAlbum">
+							<p>Álbum</p>
+						</div>
+						<div class="songsRow" id="songsRowGenre">
+							<p>Género</p>
+						</div>
+						<div class="songsRow" id="songsRowDuration">
+							<p>Duración</p>
+						</div>
+						<div class="songsRow" id="songsRowAddedIn">
+							<p>Fecha incorporación</p>
+						</div>
+						<div class="songsRow" id="songsRowActions">
+						</div>
+					</div>
+					<div id="listAllSongs">
+					</div>
+				</div>
+				<div id="tabPlaylists" class="tab">
+					<div id="playlistTop">
+						<div id="playlistTopLeft">
+							<p>playlist</p>
+							<div class="tabTopLeftTitle" id="myPlaylistsList">
+								<h2>Lista de canciones</h2>
+								<svg data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="23.7" height="36" viewBox="0 0 23.7 36"><title>reproduciendo</title><path d="M19.65,42a7.54,7.54,0,0,1-5.33-12.83A7.3,7.3,0,0,1,19.65,27a7.4,7.4,0,0,1,2.52.4,6.57,6.57,0,0,1,2,1.1V6h11.7v6.75h-8.7V34.5a7.43,7.43,0,0,1-7.5,7.5Z" transform="translate(-12.15 -6)"></path></svg>
+							</div>
+							<p id="playlistTopInfo"></p>
+						</div>
+						<div id="playlistTopRight">
+							<div class="searchBoxContainer" id="searchBoxContPlaylist">
+								<form id="searchBoxFormPl">
+									<div class="inputBox">
+										<label for="searchBoxPlaylist"><svg class="inputBoxIcon" xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m19.6 21-6.3-6.3q-.75.6-1.725.95Q10.6 16 9.5 16q-2.725 0-4.612-1.887Q3 12.225 3 9.5q0-2.725 1.888-4.613Q6.775 3 9.5 3t4.613 1.887Q16 6.775 16 9.5q0 1.1-.35 2.075-.35.975-.95 1.725l6.3 6.3ZM9.5 14q1.875 0 3.188-1.312Q14 11.375 14 9.5q0-1.875-1.312-3.188Q11.375 5 9.5 5 7.625 5 6.312 6.312 5 7.625 5 9.5q0 1.875 1.312 3.188Q7.625 14 9.5 14Z"/></svg></label>
+										<input id="searchBoxPlaylist" type="text" placeholder="buscar canción" spellcheck="false" autocomplete="off" />
+										<div class="inputBoxShadow"></div>
+										<label for="searchBoxPlaylist"><svg class="inputBoxClear" xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg></label>
+									</div>
+								</form>
+							</div>
+							<div class="btn btnShuffle" id="btnShufflePlaylist">
+								<svg title="Reproducir en Modo Aleatorio" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M29.05 40.5v-3h6.25l-9.2-9.15 2.1-2.15 9.3 9.2v-6.35h3V40.5Zm-19.45 0-2.1-2.15 27.9-27.9h-6.35v-3H40.5V18.9h-3v-6.3Zm10.15-18.7L7.5 9.6l2.15-2.15 12.25 12.2Z"/></svg>
+							</div>
+							<div class="btn btnPlay" id="btnPlayPlaylist">
+								<svg title="Reproducir" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M16 37.85v-28l22 14Zm3-14Zm0 8.55 13.45-8.55L19 15.3Z"/></svg>
+							</div>
+							<div class="btn btnPause" id="btnPausePlaylist">
+								<svg title="Pausar" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M28.25 38V10H36v28ZM12 38V10h7.75v28Z"/></svg>
+							</div>
+							<div class="btn btnContinue" id="btnContinuePlaylist">
+								<svg title="Reproducir" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M16 37.85v-28l22 14Zm3-14Zm0 8.55 13.45-8.55L19 15.3Z"/></svg>
+							</div>
+						</div>
+					</div>
+					<div id="songsTopFields">
+						<div class="songsRow" id="songsRowOrder">
+							<p>#</p>
+						</div>
+						<div class="songsRow" id="songsRowImage">
+							<p></p>
+						</div>
+						<div class="songsRow" id="songsRowTitle">
+							<p>Título</p>
+						</div>
+						<div class="songsRow" id="songsRowArtist">
+							<p>Artista</p>
+						</div>
+						<div class="songsRow" id="songsRowAlbum">
+							<p>Álbum</p>
+						</div>
+						<div class="songsRow" id="songsRowGenre">
+							<p>Género</p>
+						</div>
+						<div class="songsRow" id="songsRowDuration">
+							<p>Duración</p>
+						</div>
+						<div class="songsRow" id="songsRowActions">
+						</div>
+					</div>
+					<div id="listAllPlaylistSongs">
+					</div>
+				</div>
+				<div id="tabSettings" class="tab">
+					<div class="tabTop">
+						<svg id="tabTopBackIcon" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"><title>settings</title><path d="M19.4,44l-1-6.3a13.22,13.22,0,0,1-2-1,13.84,13.84,0,0,1-1.85-1.25l-5.9,2.7L4,30l5.4-3.95a5.89,5.89,0,0,1-.13-1c0-.38,0-.72,0-1s0-.64,0-1a5.89,5.89,0,0,1,.13-1L4,18,8.65,9.8l5.9,2.7a13.84,13.84,0,0,1,1.85-1.25,10.44,10.44,0,0,1,2-.9L19.4,4h9.2l1,6.3a14.72,14.72,0,0,1,2,.93,8.32,8.32,0,0,1,1.83,1.27l5.9-2.7L44,18l-5.4,3.85a5.94,5.94,0,0,1,.12,1.08c0,.38,0,.74,0,1.07s0,.68,0,1.05a5.81,5.81,0,0,1-.12,1.05L44,30l-4.65,8.2-5.9-2.7a16.63,16.63,0,0,1-1.83,1.28,8.81,8.81,0,0,1-2,.92l-1,6.3ZM24,30.5A6.49,6.49,0,0,0,30.5,24,6.49,6.49,0,0,0,24,17.5,6.49,6.49,0,0,0,17.5,24,6.49,6.49,0,0,0,24,30.5Zm0-3a3.48,3.48,0,1,1,2.48-1A3.4,3.4,0,0,1,24,27.5ZM21.8,41h4.4l.7-5.6A11.71,11.71,0,0,0,30,34.15a12.79,12.79,0,0,0,2.68-2L38,34.4l2-3.6-4.7-3.45q.2-.86.33-1.68A11.52,11.52,0,0,0,35.75,24a13.3,13.3,0,0,0-.1-1.68,10.36,10.36,0,0,0-.35-1.67L40,17.2l-2-3.6-5.3,2.3a11,11,0,0,0-2.6-2.17,8.38,8.38,0,0,0-3.2-1.13L26.2,7H21.8l-.7,5.6a10.39,10.39,0,0,0-3.17,1.2,11.15,11.15,0,0,0-2.63,2.1L10,13.6,8,17.2l4.7,3.45c-.13.57-.24,1.13-.32,1.68a10.79,10.79,0,0,0,0,3.34c.08.56.19,1.11.32,1.68L8,30.8l2,3.6,5.3-2.3a12.79,12.79,0,0,0,2.68,2A11.71,11.71,0,0,0,21.1,35.4Z" transform="translate(-4 -4)"/></svg>
+						<div class="tabTopLeft">
+							<h2>Configuración</h2>
+							<p id="settingsTopInfo"></p>
+						</div>
+						<div class="tabTopRight">
+							<div class="btn" id="btnSaveChanges" style="display:none">
+								<svg title="Guardar Cambios" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M42 13.85V39q0 1.2-.9 2.1-.9.9-2.1.9H9q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h25.15Zm-3 1.35L32.8 9H9v30h30ZM24 35.75q2.15 0 3.675-1.525T29.2 30.55q0-2.15-1.525-3.675T24 25.35q-2.15 0-3.675 1.525T18.8 30.55q0 2.15 1.525 3.675T24 35.75ZM11.65 18.8h17.9v-7.15h-17.9ZM9 15.2V39 9Z"/></svg>
+							</div>
+						</div>
+					</div>
+					<div id="settingsLastUpdated">
+						<p>Actualizado por última vez el <span id="settingsLastUpdatedDate"></span></p>
+						<p id="settingsLastUpdatedVersion"></p>
+					</div>
+					<div id="settingsContent">
+						<div class="settingsItem" id="settingsBackup">
+							<div class="settingsItemTop">
+								<p>Copia de seguridad</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsDownloadBackupText">Descarga una copia de seguridad de todos los datos de la aplicación</p>
+								<div id="settingsDownloadOptions">
+									<div id="downloadData">
+										<p>Descargar backup</p>
+									</div>
+									<div id="lastDownload">
+										<p></p>
+									</div>
+								</div>
+								<p  id="settingsRestoreBackupText">Restaura los datos desde una copia de seguridad anterior. ¡Cuidado! se perderán todos los datos actuales</p>
+								<input id="uploadDataFile" type="file" style="display:none" />
+								<div id="settingsRestoreOptions">
+									<div id="restoreData">
+										<p>Seleccionar archivo</p>
+									</div>
+									<div id="restoreInfo">
+										<p>ningún archivo seleccionado</p>
+									</div>
+									<div id="restoreConfirm">
+										<p>Restaurar</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="settingsItem" id="settingsDarkMode">
+							<div class="settingsItemTop">
+								<p>Modo oscuro</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsDarkModeText">Activa el modo oscuro para evitar dañarte la vista</p>
+								<p id="settingsDarkModeOptions">
+									<label>
+										<input class="settingsDarkModeRadio" type="radio" name="settingsDarkMode" value="Activado" />
+										<span id="settingsDarkModeEnabled">Activado</span>
+									</label>
+									<label>
+										<input class="settingsDarkModeRadio" type="radio" name="settingsDarkMode" value="Desactivado" checked />
+										<span id="settingsDarkModeDisabled">Desactivado</span>
+									</label>
+								</p>
+							</div>
+						</div>
+						<div class="settingsItem" id="settingsShowPlaylists">
+							<div class="settingsItemTop">
+								<p>Mostrar playlists</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsShowPlaylistsText">Mostrar las playlists en el menú lateral por defecto</p>
+								<p id="settingsNavPlaylistsOptions">
+									<label>
+										<input class="settingsNavPlaylistRadio" type="radio" name="settingsNavPlaylists" value="Activado" checked />
+										<span id="settingsShowPlaylistsEnabled">Activado</span>
+									</label>
+									<label>
+										<input class="settingsNavPlaylistRadio" type="radio" name="settingsNavPlaylists" value="Desactivado" />
+										<span id="settingsShowPlaylistsDisabled">Desactivado</span>
+									</label>
+								</p>
+							</div>
+						</div>
+						<div class="settingsItem" id="settingsFileLocation">
+							<div class="settingsItemTop">
+								<p>Ubicación archivos</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsAudioFileMsg">Indica la ruta en la que se almacenan los archivos de audio. Deberás almacenar en este directorio todas las canciones que añadas.</p>
+								<div id="settingsFileLocationContainer">
+									<div class="inputBox">
+										<input id="settingsFileLocationUrl" type="text" placeholder="escribe la ruta que se almacenarán los archivos de audio" />
+										<div class="inputBoxShadow"></div>
+									</div>
+									<div id="settingsFileLocationSubmit">
+										<p>Cambiar</p>
+									</div>
+								</div>
+								<p id="settingsCoverFileMsg">Indica la ruta en la que se almacenan los archivos de las carátulas de los discos</p>
+								<div id="settingsCoverLocationContainer">
+									<div class="inputBox">
+										<input id="settingsCoverLocationUrl" type="text" placeholder="escribe la ruta con los archivos de imágenes de los discos" />
+										<div class="inputBoxShadow"></div>
+									</div>
+									<div id="settingsCoverLocationSubmit">
+										<p>Cambiar</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="settingsItem" id="settingsItemAvoided">
+							<div class="settingsItemTop">
+								<p>Canciones evitadas</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsAvoidSongsMsg">Puedes evitar las canciones que se te hacen repetitivas durante 15 días. Podrás seguir reproduciéndolas haciendo clic sobre ellas, pero no figurarán en la cola hasta que el tiempo expire.<br /><br />Canciones evitadas actualmente:</p>
+								<div id="settingsAvoidedList">
+									<div class="settingsAvoidedSong">
+										<div class="settingsAvoidCell settingsAvoidedSongTitle">Título</div>
+										<div class="settingsAvoidCell settingsAvoidedSongArtist">Artista</div>
+										<div class="settingsAvoidCell settingsAvoidedSongEndDate">-</div>
+										<div class="settingsAvoidCell settingsAvoidedSongUnAvoid">unavoid</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="settingsItem" id="settingsLanguage">
+							<div class="settingsItemTop">
+								<p>Idioma de la página</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsItemLangMsg">Los textos de la página se mostrarán en el idioma seleccionado</p>
+								<div class="selectBox">
+									<select class="settingsSelect" id="settingsSelectLang">
+										<option value="en">English</option>
+										<option value="es">Español</option>
+									</select>
+									<div class="selectShadow"></div>
+								</div>
+							</div>
+						</div>
+						<div class="settingsItem" id="settingsItemSpace">
+							<div class="settingsItemTop">
+								<p>Almacenamiento disponible</p>
+							</div>
+							<div class="settingsItemBody">
+								<p id="settingsItemSpaceMsg">Información sobre el almacenamiento disponible en localstorage para que la aplicación pueda funcionar</p>
+								<div id="settingsSpaceCenter">
+									<p id="settingsSpaceApp"></p>
+									<p id="settingsSpaceTotal"></p>
+									<!--<input id="settingsSpaceBar" type="range" min="0" max="10485760" value="0" step="1" />-->
+									<div id="settingsSpaceSize">
+										<div id="settingsSpaceBar">
+											<div id="settingsSpaceBarFill"></div>
+										</div>
+										<p id="settingsSpaceNumber"></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab" id="tabAddSong">
+					<div class="tabTop">
+						<div class="tabTopLeft">
+							<h2>Añadir canción</h2>
+							<p id="tabTopInfo">Añade una canción a la lista de canciones</p>
+						</div>
+						<div class="tabTopRight">
+							<div class="btn" id="btnCancelAddSong">
+								<svg title="Cancelar" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/></svg>
+							</div>
+							<div class="btn" id="btnSaveAddSong">
+								<svg title="Guardar Cambios" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M42 13.85V39q0 1.2-.9 2.1-.9.9-2.1.9H9q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h25.15Zm-3 1.35L32.8 9H9v30h30ZM24 35.75q2.15 0 3.675-1.525T29.2 30.55q0-2.15-1.525-3.675T24 25.35q-2.15 0-3.675 1.525T18.8 30.55q0 2.15 1.525 3.675T24 35.75ZM11.65 18.8h17.9v-7.15h-17.9ZM9 15.2V39 9Z"/></svg>
+							</div>
+						</div>
+					</div>
+					<div class="tabTopSub">
+						<p>Introduzca los datos de la nueva canción</p>
+					</div>
+					<div id="addSongContent">
+						<div class="addSongItem" id="addSongTitle">
+							<p>Título de la canción</p>
+							<div class="inputBox">
+								<input id="addSongInputTitle" type="text"  max-length="40" placeholder="escribe aquí el título" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<div class="addSongItem" id="addSongArtist">
+							<p>Nombre del artista</p>
+							<div class="inputBox">
+								<input id="addSongInputArtist" type="text"  max-length="40" placeholder="escribe aquí el nombre" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<div class="addSongItem" id="addSongAlbum">
+							<p>Nombre del álbum</p>
+							<div class="inputBox">
+								<input id="addSongInputAlbum" type="text"  max-length="40" placeholder="escribe aquí el nombre" />
+								<div class="inputBoxShadow"></div>
+							</div>
+						</div>
+						<div class="addSongItem" id="addSongGenre">
+							<p>Género musical</p>
+							<div class="inputBox">
+								<input id="addSongInputGenre" type="text"  max-length="40" placeholder="escribe aquí el género" />
+								<div class="inputBoxShadow"></div>
+							</div>
+						</div>
+						<div class="addSongItem" id="addSongPublished">
+							<p>Lanzamiento</p>
+							<div class="inputBox">
+								<input id="addSongInputPublished" type="text"  max-length="40" placeholder="escribe aquí el año" />
+								<div class="inputBoxShadow"></div>
+							</div>
+						</div>
+						<div class="addSongItem" id="addSongImage">
+							<p>Imagen del disco</p>
+							<div class="inputBox">
+								<input id="addSongInputImage" type="text"  max-length="120" placeholder="escribe el nombre de la imagen del disco" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<div id="addSongImageSelector">
+								<label for="addSongInputImageFile"><div id="addSongImageSelectorButton">
+									<p>Seleccionar</p>
+								</div></label>
+								<input id="addSongInputImageFile" type="file" style="display:none" />
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<div class="addSongItem" id="addSongUrl">
+							<p>Archivo de audio</p>
+							<div class="inputBox">
+								<input id="addSongInputUrl" type="text"  max-length="120" placeholder="escribe la ruta del archivo de audio" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<div id="addSongUrlSelector">
+								<label for="addSongInputUrlFile"><div id="addSongUrlSelectorButton">
+									<p>Seleccionar</p>
+								</div></label>
+								<input id="addSongInputUrlFile" type="file" style="display:none" />
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+					</div>
+				</div>
+				<div class="tab" id="tabEditSong">
+					<div class="tabTop">
+						<div class="tabTopLeft">
+							<h2>Editar canción</h2>
+							<p id="tabTopInfo">Edita la canción [titulo]</p>
+						</div>
+						<div class="tabTopRight">
+							<div class="btn" id="btnCancelEditSong">
+								<svg title="Cancelar" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/></svg>
+							</div>
+							<div class="btn" id="btnSaveEditSong">
+								<svg title="Guardar Cambios" xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M42 13.85V39q0 1.2-.9 2.1-.9.9-2.1.9H9q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h25.15Zm-3 1.35L32.8 9H9v30h30ZM24 35.75q2.15 0 3.675-1.525T29.2 30.55q0-2.15-1.525-3.675T24 25.35q-2.15 0-3.675 1.525T18.8 30.55q0 2.15 1.525 3.675T24 35.75ZM11.65 18.8h17.9v-7.15h-17.9ZM9 15.2V39 9Z"/></svg>
+							</div>
+						</div>
+					</div>
+					<div class="tabTopSub">
+						<p>Edite los cambios de la canción</p>
+					</div>
+					<div id="editSongContent">
+						<input id="editSongId" type="hidden" value="" />
+						<input id="editSongAddedIn" type="hidden" value="" />
+						<input id="editSongTimesPlayed" type="hidden" value="" />
+						<input id="editSongLastPlayed" type="hidden" value="" />
+						<input id="editSongDuration" type="hidden" value="" />
+						<div class="addSongItem">
+							<p>Título de la canción</p>
+							<div class="inputBox">
+								<input id="editSongInputTitle" type="text"  max-length="40" placeholder="escribe aquí el título" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<div class="addSongItem">
+							<p>Nombre del artista</p>
+							<div class="inputBox">
+								<input id="editSongInputArtist" type="text"  max-length="40" placeholder="escribe aquí el nombre" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<div class="addSongItem">
+							<p>Nombre del álbum</p>
+							<div class="inputBox">
+								<input id="editSongInputAlbum" type="text"  max-length="40" placeholder="escribe aquí el nombre" />
+								<div class="inputBoxShadow"></div>
+							</div>
+						</div>
+						<div class="addSongItem">
+							<p>Género musical</p>
+							<div class="inputBox">
+								<input id="editSongInputGenre" type="text"  max-length="40" placeholder="escribe aquí el género" />
+								<div class="inputBoxShadow"></div>
+							</div>
+						</div>
+						<div class="addSongItem">
+							<p>Lanzamiento</p>
+							<div class="inputBox">
+								<input id="editSongInputPublished" type="text"  max-length="40" placeholder="escribe aquí la fecha" />
+								<div class="inputBoxShadow"></div>
+							</div>
+						</div>
+						<div class="addSongItem">
+							<p>Imagen del disco</p>
+							<div class="inputBox">
+								<input id="editSongInputImage" type="text"  max-length="120" placeholder="escribe la ruta de la imagen del disco" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<div class="addSongItem">
+							<p>Archivo de audio</p>
+							<div class="inputBox">
+								<input id="editSongInputUrl" type="text"  max-length="120" placeholder="escribe la ruta del archivo de audio" />
+								<div class="inputBoxShadow"></div>
+							</div>
+							<p class="addSongRequired">dato obligatorio</p>
+						</div>
+						<input id="editSongPrevTab" type="hidden" />
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div id="footerMain">
+				<div id="footerSongInfo">
+					<div id="footerSongImage">
+						<img src="img/defaultSong.svg" />
+					</div>
+					<div id="footerSongDetails">
+						<p id="footerSongTitle"></p>
+						<p id="footerSongArtist"></p>
+					</div>
+				</div>
+				<div id="footerControls">
+					<div id="footerControlsCenter">
+						<div class="footerBtn" id="footerControlPrev">
+							<svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="M9.167 30V10h2.791v20Zm21.666 0L16.208 20l14.625-10Zm-2.791-10Zm0 4.708v-9.416L21.125 20Z"/></svg>
+						</div>
+						<div class="footerBtn" id="footerControlPlay">
+							<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M16 37.85v-28l22 14Zm3-14Zm0 8.55 13.45-8.55L19 15.3Z"/></svg>
+						</div>
+						<div class="footerBtn" id="footerControlPause">
+							<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M28.25 38V10H36v28ZM12 38V10h7.75v28Z"/></svg>
+						</div>
+						<div class="footerBtn" id="footerControlNext">
+							<svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="M28.042 30V10h2.791v20ZM9.167 30V10l14.625 10Zm2.791-10Zm0 4.708L18.875 20l-6.917-4.708Z"/></svg>
+						</div>
+					</div>
+				</div>
+				<div id="footerAudio"></div>
+				<div id="footerTrack">
+					<div id="footerSeekTrack">
+						<p id="footerTrackCurrent">0:00</p>
+						<input id="seekTrack" type="range" min="1" max="194" value="0" step="1" />
+						<p id="footerTrackEnd">0:00</p>
+					</div>
+				</div>
+				<div id="footerVolume">
+					<div id="footerSeekVolume">
+						<div id="footerVolumeIcon">
+							<svg xmlns="http://www.w3.org/2000/svg" height="40" width="40"><path d="M23.333 34.542v-2.875q3.959-1.125 6.417-4.355 2.458-3.229 2.458-7.354t-2.458-7.375q-2.458-3.25-6.417-4.333V5.375q5.167 1.167 8.417 5.229Q35 14.667 35 19.958q0 5.292-3.25 9.354-3.25 4.063-8.417 5.23ZM5 25V15h6.667L20 6.667v26.666L11.667 25Zm17.792 1.875V13.042q2.166.791 3.437 2.708Q27.5 17.667 27.5 20q0 2.292-1.292 4.208-1.291 1.917-3.416 2.667Zm-5.584-13.292-4.333 4.209H7.792v4.416h5.083l4.333 4.25Zm-4 6.417Z"/></svg>
+						</div>
+						<input id="volumeTrack" type="range" min="0" max="100" value="0" step="1" />
+						<p id="footerVolumeCurrent">0</p>
+					</div>
+				</div>
+				<div id="footerMainOpts"></div>
+			</div>
+			<div id="footerMore"></div>
+		</footer>
+	</div>
+
+	<!-- inicio del menu contextual -->
+    <div id="context" class="swing">
+        <ul>
+            <li id="context1">Abrir fichero / carpeta</li>
+            <li id="context2" class="disabled">información</li>
+            <li id="context3">Agregar a favoritos</li>
+        </ul>
+    </div>
+    <!-- fin del menu contextual -->
+</body>
+</html>
